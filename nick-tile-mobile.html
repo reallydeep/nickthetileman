@@ -1,0 +1,2832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2C2E33">
+<title>Nick the Tile Man | NYC Tile Installation & Repair</title>
+<meta name="description" content="Third-generation NYC tile specialist. Bathroom tile, kitchen backsplash, shower repair, re-grouting. Brooklyn, Queens, Manhattan & Long Island. Call (917) 865-8693.">
+<meta name="keywords" content="bathroom tile installer NYC, tile repair Queens, tile installation Brooklyn, kitchen backsplash Manhattan, shower pan repair, re-grouting NYC">
+<!-- Open Graph -->
+<meta property="og:title" content="Nick the Tile Man | NYC Tile Installation">
+<meta property="og:description" content="Third-generation NYC tile specialist. Free estimates. Call (917) 865-8693.">
+<meta property="og:type" content="website">
+<!-- Preconnect for fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Font with display=swap for performance -->
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════════════
+   VARIABLES
+═══════════════════════════════════════════════ */
+:root{
+  --cream:#F5EFE4;--cream-dark:#E8DECE;
+  --clay:#C17A5D;--clay-l:#D4957A;--clay-d:#9A5A40;
+  --gold:#C9A84C;--gold-l:#E2C57A;
+  --slate:#2C2E33;--slate-m:#454850;--slate-l:#6B7280;
+  --grout:#9B9589;--grout-d:#6E695F;
+  --white:#FDFAF5;--navy:#1A2744;--stone:#8B836E;
+  --r:2px;
+  /* Mobile-first spacing */
+  --sp-xs:8px;--sp-sm:16px;--sp-md:24px;--sp-lg:40px;--sp-xl:64px;
+  /* Tap target minimum */
+  --tap:48px;
+  /* Sticky bar height */
+  --sticky-h:52px;
+  /* Nav height */
+  --nav-h:60px;
+  /* Total top offset */
+  --top-offset:112px;
+}
+
+/* ═══════════════════════════════════════════════
+   RESET & BASE (MOBILE FIRST)
+═══════════════════════════════════════════════ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:var(--top-offset)}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--cream);
+  color:var(--slate);
+  overflow-x:hidden;
+  /* Account for sticky bars */
+  padding-top:var(--top-offset);
+}
+img{display:block;width:100%;height:auto}
+button,input,select,textarea{font-family:inherit}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;line-height:1.15}
+.bebas{font-family:'Bebas Neue',sans-serif;letter-spacing:.04em}
+
+/* ═══════════════════════════════════════════════
+   PERFORMANCE: REDUCE MOTION
+═══════════════════════════════════════════════ */
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+
+/* ═══════════════════════════════════════════════
+   STICKY TOP CTA BAR (Mobile-first, always visible)
+═══════════════════════════════════════════════ */
+.sticky-cta{
+  position:fixed;top:0;left:0;right:0;
+  z-index:2000;
+  height:var(--sticky-h);
+  background:var(--slate);
+  display:flex;align-items:center;
+  padding:0 var(--sp-sm);
+  gap:var(--sp-xs);
+  border-bottom:2px solid var(--grout-d);
+  /* Safe area for notched phones */
+  padding-left:max(var(--sp-sm),env(safe-area-inset-left));
+  padding-right:max(var(--sp-sm),env(safe-area-inset-right));
+}
+.sticky-cta-brand{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:.9rem;letter-spacing:.08em;
+  color:rgba(245,239,228,.45);
+  flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.sticky-cta-brand span{display:none} /* shown on larger screens */
+.sc-call{
+  display:flex;align-items:center;justify-content:center;gap:6px;
+  height:38px;padding:0 14px;
+  background:var(--gold);color:var(--slate);
+  border-radius:var(--r);font-weight:700;
+  font-size:.82rem;letter-spacing:.05em;text-transform:uppercase;
+  white-space:nowrap;flex-shrink:0;
+  transition:background .2s;
+  -webkit-tap-highlight-color:transparent;
+}
+.sc-call:active{background:var(--gold-l)}
+.sc-call svg{width:15px;height:15px;flex-shrink:0}
+.sc-est{
+  display:flex;align-items:center;justify-content:center;gap:6px;
+  height:38px;padding:0 14px;
+  background:var(--clay);color:var(--white);
+  border-radius:var(--r);font-weight:700;
+  font-size:.82rem;letter-spacing:.05em;text-transform:uppercase;
+  white-space:nowrap;flex-shrink:0;
+  transition:background .2s;
+  -webkit-tap-highlight-color:transparent;
+}
+.sc-est:active{background:var(--clay-d)}
+.sc-est svg{width:15px;height:15px;flex-shrink:0}
+
+/* ═══════════════════════════════════════════════
+   NAVIGATION
+═══════════════════════════════════════════════ */
+nav{
+  position:fixed;top:var(--sticky-h);left:0;right:0;z-index:1900;
+  height:var(--nav-h);
+  background:var(--slate);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 var(--sp-sm);
+  border-bottom:1px solid rgba(155,149,137,.18);
+  transition:box-shadow .3s;
+}
+nav.scrolled{box-shadow:0 4px 24px rgba(0,0,0,.25)}
+
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo-tiles{
+  width:28px;height:28px;
+  display:grid;grid-template-columns:1fr 1fr;gap:2px;flex-shrink:0;
+}
+.nav-logo-tiles span{display:block;border-radius:1px;background:var(--clay)}
+.nav-logo-tiles span:nth-child(2){background:var(--gold)}
+.nav-logo-tiles span:nth-child(3){background:var(--gold)}
+.nav-lt{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.15rem;letter-spacing:.08em;
+  color:var(--cream);line-height:1;
+}
+
+/* Hamburger button */
+.nav-burger{
+  display:flex;flex-direction:column;justify-content:center;
+  align-items:center;gap:5px;
+  width:var(--tap);height:var(--tap);
+  background:none;border:none;cursor:pointer;
+  padding:8px;flex-shrink:0;
+  -webkit-tap-highlight-color:transparent;
+}
+.nav-burger span{
+  display:block;width:22px;height:2px;
+  background:var(--cream);border-radius:2px;
+  transition:transform .3s, opacity .3s, background .3s;
+  transform-origin:center;
+}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-burger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* Desktop links (hidden on mobile) */
+.nav-desktop-links{display:none}
+
+/* ═══════════════════════════════════════════════
+   FULL-SCREEN MOBILE NAV PANEL
+═══════════════════════════════════════════════ */
+.mobile-nav-panel{
+  position:fixed;
+  top:var(--top-offset);left:0;right:0;bottom:0;
+  z-index:1800;
+  background:var(--slate);
+  display:flex;flex-direction:column;
+  transform:translateX(-100%);
+  transition:transform .38s cubic-bezier(.25,.46,.45,.94);
+  overflow-y:auto;
+  -webkit-overflow-scrolling:touch;
+}
+.mobile-nav-panel.open{transform:translateX(0)}
+
+.mnp-inner{
+  display:flex;flex-direction:column;
+  padding:var(--sp-lg) var(--sp-md);
+  min-height:100%;
+}
+.mnp-link{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:var(--sp-sm) 0;
+  border-bottom:1px solid rgba(155,149,137,.14);
+  font-family:'Cormorant Garamond',serif;
+  font-size:2rem;font-weight:600;
+  color:var(--cream);
+  -webkit-tap-highlight-color:transparent;
+  min-height:var(--tap);
+}
+.mnp-link:active{color:var(--gold)}
+.mnp-link-icon{
+  width:36px;height:36px;
+  border:1px solid rgba(155,149,137,.25);border-radius:var(--r);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.mnp-link-icon svg{width:16px;height:16px;color:var(--clay-l)}
+
+/* Design Studio link in nav - highlighted */
+.mnp-ds{
+  background:rgba(201,168,76,.1);
+  border-radius:var(--r);padding:var(--sp-sm) var(--sp-sm);
+  border:1px solid rgba(201,168,76,.3)!important;
+  margin-top:4px;
+}
+.mnp-ds .mnp-link-text{color:var(--gold)}
+
+.mnp-bottom{margin-top:auto;padding-top:var(--sp-lg)}
+.mnp-cta-call{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  width:100%;height:56px;
+  background:var(--gold);color:var(--slate);
+  border-radius:var(--r);border:none;
+  font-family:'DM Sans',sans-serif;
+  font-size:1.1rem;font-weight:800;letter-spacing:.06em;
+  text-transform:uppercase;margin-bottom:10px;
+  -webkit-tap-highlight-color:transparent;
+}
+.mnp-cta-est{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  width:100%;height:56px;
+  background:var(--clay);color:var(--white);
+  border-radius:var(--r);border:none;
+  font-family:'DM Sans',sans-serif;
+  font-size:1.1rem;font-weight:800;letter-spacing:.06em;
+  text-transform:uppercase;
+  -webkit-tap-highlight-color:transparent;
+}
+.mnp-badges{
+  display:flex;gap:8px;flex-wrap:wrap;
+  margin-top:var(--sp-md);
+}
+.mnp-badge{
+  font-size:.7rem;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;color:rgba(245,239,228,.4);
+  background:rgba(255,255,255,.06);
+  padding:5px 12px;border-radius:20px;
+}
+
+/* ═══════════════════════════════════════════════
+   SECTION COMMONS (mobile-first)
+═══════════════════════════════════════════════ */
+section{padding:var(--sp-xl) 0}
+.wrap{width:100%;max-width:1280px;margin:0 auto;padding:0 var(--sp-md)}
+
+.sec-lbl{
+  font-size:.72rem;font-weight:700;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--clay);
+  display:flex;align-items:center;gap:10px;margin-bottom:12px;
+}
+.sec-lbl::before{content:'';display:block;width:24px;height:2px;background:var(--clay)}
+.sec-title{
+  font-size:clamp(1.9rem,7vw,3.2rem);
+  font-weight:600;color:var(--slate);margin-bottom:16px;
+}
+.sec-title em{font-style:italic;color:var(--clay)}
+.sec-intro{
+  font-size:1rem;color:var(--slate-l);
+  line-height:1.72;max-width:560px;
+}
+
+/* Reveal animation — lightweight */
+.reveal{
+  opacity:0;transform:translateY(24px);
+  transition:opacity .55s ease, transform .55s ease;
+}
+.reveal.visible{opacity:1;transform:none}
+.r1{transition-delay:.1s}.r2{transition-delay:.18s}.r3{transition-delay:.26s}.r4{transition-delay:.34s}
+
+/* ═══════════════════════════════════════════════
+   BUTTONS (44px min height)
+═══════════════════════════════════════════════ */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  min-height:var(--tap);padding:0 24px;
+  border-radius:var(--r);font-weight:700;
+  font-size:.9rem;letter-spacing:.08em;text-transform:uppercase;
+  border:2px solid transparent;cursor:pointer;
+  transition:all .25s;-webkit-tap-highlight-color:transparent;
+  white-space:nowrap;
+}
+.btn-clay{background:var(--clay);color:var(--white);border-color:var(--clay)}
+.btn-clay:active{background:var(--clay-d)}
+.btn-gold{background:var(--gold);color:var(--slate);border-color:var(--gold)}
+.btn-gold:active{background:var(--gold-l)}
+.btn-outline{background:transparent;color:var(--slate);border-color:var(--grout-d)}
+.btn-outline:active{background:var(--cream-dark)}
+.btn-outline-w{background:transparent;color:var(--white);border-color:rgba(255,255,255,.35)}
+.btn-outline-w:active{background:rgba(255,255,255,.1)}
+.btn-full{width:100%}
+
+/* ═══════════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════════ */
+#hero{
+  min-height:100svh;
+  background:var(--slate);
+  position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+  padding:0;
+}
+
+/* Tile grid background */
+.hero-tiles{
+  position:absolute;inset:0;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  grid-template-rows:repeat(8,1fr);
+  gap:3px;background:var(--grout-d);padding:3px;
+  opacity:.45;
+}
+.ht{
+  border-radius:1px;opacity:0;
+  animation:tSnap .45s cubic-bezier(.34,1.56,.64,1) forwards;
+}
+.ht:nth-child(odd){background:#3A3C41}
+.ht:nth-child(even){background:#323438}
+.ht:nth-child(5n){background:#2E3034}
+.ht:nth-child(7n){background:#404248}
+/* accent tiles */
+.ht:nth-child(3){background:var(--clay-d)!important;opacity:.6!important}
+.ht:nth-child(15){background:var(--clay-d)!important;opacity:.4!important}
+.ht:nth-child(22){background:#5A4A35!important;opacity:.5!important}
+@keyframes tSnap{0%{opacity:0;transform:scale(.55) translateY(-18px)}100%{opacity:1;transform:none}}
+
+/* Stagger 32 cells */
+.ht:nth-child(1){animation-delay:.02s}.ht:nth-child(2){animation-delay:.05s}.ht:nth-child(3){animation-delay:.08s}.ht:nth-child(4){animation-delay:.11s}
+.ht:nth-child(5){animation-delay:.07s}.ht:nth-child(6){animation-delay:.10s}.ht:nth-child(7){animation-delay:.13s}.ht:nth-child(8){animation-delay:.04s}
+.ht:nth-child(9){animation-delay:.12s}.ht:nth-child(10){animation-delay:.15s}.ht:nth-child(11){animation-delay:.18s}.ht:nth-child(12){animation-delay:.09s}
+.ht:nth-child(13){animation-delay:.16s}.ht:nth-child(14){animation-delay:.19s}.ht:nth-child(15){animation-delay:.22s}.ht:nth-child(16){animation-delay:.13s}
+.ht:nth-child(17){animation-delay:.20s}.ht:nth-child(18){animation-delay:.23s}.ht:nth-child(19){animation-delay:.26s}.ht:nth-child(20){animation-delay:.17s}
+.ht:nth-child(21){animation-delay:.22s}.ht:nth-child(22){animation-delay:.25s}.ht:nth-child(23){animation-delay:.28s}.ht:nth-child(24){animation-delay:.19s}
+.ht:nth-child(25){animation-delay:.24s}.ht:nth-child(26){animation-delay:.27s}.ht:nth-child(27){animation-delay:.30s}.ht:nth-child(28){animation-delay:.21s}
+.ht:nth-child(29){animation-delay:.26s}.ht:nth-child(30){animation-delay:.29s}.ht:nth-child(31){animation-delay:.32s}.ht:nth-child(32){animation-delay:.23s}
+
+.hero-content{
+  position:relative;z-index:2;
+  text-align:center;padding:var(--sp-md);
+  opacity:0;transform:translateY(24px);
+  animation:heroIn .75s ease .5s forwards;
+  width:100%;max-width:800px;
+}
+@keyframes heroIn{to{opacity:1;transform:none}}
+
+.hero-eye{
+  font-size:.7rem;font-weight:700;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--gold);
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  margin-bottom:18px;
+}
+.hero-eye::before,.hero-eye::after{
+  content:'';display:block;width:28px;height:2px;
+  background:var(--gold);opacity:.5;
+}
+.hero-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(3.8rem,18vw,8rem);
+  line-height:.92;color:var(--white);
+  letter-spacing:.03em;margin-bottom:4px;
+}
+.hero-title .ac{color:var(--clay)}.hero-title .go{color:var(--gold)}
+.hero-sub{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1rem,4vw,1.45rem);
+  font-style:italic;color:rgba(245,239,228,.65);
+  margin-bottom:20px;
+}
+.hero-desc{
+  font-size:1rem;color:rgba(245,239,228,.58);
+  max-width:540px;margin:0 auto 32px;line-height:1.7;
+}
+.hero-btns{
+  display:flex;flex-direction:column;gap:10px;
+  align-items:stretch;max-width:360px;margin:0 auto;
+}
+
+/* Hero Studio button */
+.btn-studio{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  min-height:var(--tap);padding:0 24px;
+  background:linear-gradient(135deg,var(--gold),var(--gold-l));
+  color:var(--slate);border-radius:var(--r);
+  font-weight:800;font-size:.9rem;letter-spacing:.08em;text-transform:uppercase;
+  border:none;cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+}
+.btn-studio:active{filter:brightness(.95)}
+
+/* Hero stats row */
+.hero-stats{
+  position:absolute;bottom:20px;left:0;right:0;
+  display:flex;justify-content:center;gap:0;
+  z-index:3;padding:0 var(--sp-md);
+}
+.hero-stats-inner{
+  display:flex;gap:0;
+  background:rgba(44,46,51,.82);
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(155,149,137,.18);
+  border-radius:var(--r);overflow:hidden;
+}
+.hstat{padding:10px 16px;text-align:center;border-right:1px solid rgba(155,149,137,.18)}
+.hstat:last-child{border-right:none}
+.hstat-n{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;line-height:1;color:var(--gold)}
+.hstat-l{font-size:.58rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(245,239,228,.42)}
+
+/* ═══════════════════════════════════════════════
+   STICKY CTA STRIP (scroll-triggered reminder)
+═══════════════════════════════════════════════ */
+.trust-bar{
+  background:var(--gold);padding:12px var(--sp-md);
+  display:flex;align-items:center;justify-content:center;
+  gap:var(--sp-sm);flex-wrap:wrap;
+}
+.trust-item{
+  display:flex;align-items:center;gap:7px;
+  font-size:.75rem;font-weight:600;letter-spacing:.07em;
+  text-transform:uppercase;color:var(--slate);
+}
+.trust-item svg{width:14px;height:14px;flex-shrink:0}
+.trust-div{color:var(--clay-d);font-size:1rem}
+
+/* ═══════════════════════════════════════════════
+   SERVICES (mobile-first: single column)
+═══════════════════════════════════════════════ */
+#services{background:var(--white);position:relative}
+#services::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:4px;
+  background:repeating-linear-gradient(90deg,
+    var(--clay) 0,var(--clay) 72px,var(--grout-d) 72px,var(--grout-d) 75px,
+    var(--gold) 75px,var(--gold) 147px,var(--grout-d) 147px,var(--grout-d) 150px);
+}
+.svc-hdr{margin-bottom:var(--sp-lg)}
+.svc-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:3px;
+  background:var(--grout-d);padding:3px;border-radius:var(--r);
+}
+.svc-card{
+  background:var(--cream);
+  padding:var(--sp-md) var(--sp-sm);
+  border-radius:var(--r);
+  display:flex;align-items:flex-start;gap:var(--sp-sm);
+  /* touch-friendly: no hover flip on mobile */
+}
+.svc-icon{
+  width:44px;height:44px;flex-shrink:0;
+  background:var(--clay);border-radius:var(--r);
+  display:flex;align-items:center;justify-content:center;
+}
+.svc-icon svg{width:20px;height:20px;color:white}
+.svc-body{flex:1}
+.svc-num{font-family:'Bebas Neue',sans-serif;font-size:.7rem;color:var(--grout);letter-spacing:.14em;margin-bottom:4px}
+.svc-title{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:var(--slate);margin-bottom:6px}
+.svc-desc{font-size:.9rem;color:var(--slate-l);line-height:1.6}
+
+/* ═══════════════════════════════════════════════
+   STATS
+═══════════════════════════════════════════════ */
+.stats-sec{background:var(--cream-dark);padding:var(--sp-lg) 0}
+.stats-row{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:3px;background:var(--grout-d);border-radius:var(--r);overflow:hidden;
+}
+.stat-blk{background:var(--white);padding:var(--sp-md) var(--sp-sm);text-align:center}
+.stat-n{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;line-height:1;color:var(--clay);display:block}
+.stat-lbl{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--slate-l);margin-top:4px}
+.stat-d{font-size:.8rem;color:var(--stone);margin-top:4px;line-height:1.35}
+
+/* ═══════════════════════════════════════════════
+   STORY
+═══════════════════════════════════════════════ */
+#story{background:var(--slate);overflow:hidden}
+.story-title{color:var(--white)}.story-title em{color:var(--clay)}
+.story-lbl{color:var(--gold)}.story-lbl::before{background:var(--gold)}
+.story-body{font-size:1rem;color:rgba(245,239,228,.65);line-height:1.78;margin-bottom:18px}
+.story-body strong{color:var(--gold-l);font-weight:600}
+.story-quote{
+  background:rgba(201,168,76,.1);border-left:3px solid var(--gold);
+  padding:16px 18px;border-radius:0 var(--r) var(--r) 0;margin:20px 0;
+}
+.story-quote p{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-style:italic;color:var(--cream);line-height:1.6}
+.nathans-box{
+  background:rgba(193,122,93,.12);border:1px solid rgba(193,122,93,.3);
+  border-radius:var(--r);padding:16px;margin-top:18px;
+  display:flex;gap:12px;align-items:flex-start;
+}
+.nathans-box p{font-size:.88rem;color:rgba(245,239,228,.68);line-height:1.55}
+.nathans-box strong{color:var(--clay-l)}
+.gen-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:22px}
+.gen-b{background:rgba(255,255,255,.06);border:1px solid rgba(155,149,137,.18);border-radius:var(--r);padding:12px;text-align:center}
+.gen-nm{font-family:'Cormorant Garamond',serif;font-size:.9rem;font-weight:600;color:var(--cream);margin-bottom:3px}
+.gen-rl{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
+
+/* Story photo stack — two photos */
+.story-photo-wrap{position:relative;margin-top:var(--sp-lg);padding-bottom:56px}
+.story-photo-main{border-radius:var(--r);overflow:hidden;position:relative}
+.story-photo-main img{width:100%;height:300px;object-fit:cover;object-position:center top;filter:grayscale(15%);display:block}
+.story-photo-accent{position:absolute;bottom:0;right:-8px;width:42%;border:3px solid var(--slate);border-radius:var(--r);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.5);z-index:2}
+.story-photo-accent img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top center;display:block}
+.story-photo-badge{position:absolute;bottom:58px;left:0;right:46%;background:linear-gradient(to top,rgba(44,46,51,.88),transparent);padding:20px 12px 8px;font-size:.65rem;letter-spacing:.09em;text-transform:uppercase;color:rgba(245,239,228,.5);line-height:1.5}
+.story-photo-caption{position:absolute;bottom:4px;right:-4px;background:rgba(44,46,51,.9);padding:4px 8px;border-radius:1px;font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);white-space:nowrap;z-index:3}
+
+/* ═══════════════════════════════════════════════
+   PORTFOLIO GALLERY (mobile: 2-col)
+═══════════════════════════════════════════════ */
+#portfolio{background:var(--cream)}
+.port-hdr{margin-bottom:var(--sp-lg)}
+.port-filter{
+  display:flex;gap:6px;
+  overflow-x:auto;-webkit-overflow-scrolling:touch;
+  scrollbar-width:none;padding-bottom:4px;
+  /* Ensure scrollable with no bar */
+}
+.port-filter::-webkit-scrollbar{display:none}
+.fil-btn{
+  flex-shrink:0;padding:0 16px;height:38px;
+  border:none;border-radius:20px;
+  font-family:'DM Sans',sans-serif;font-size:.78rem;font-weight:600;
+  letter-spacing:.06em;text-transform:uppercase;
+  background:var(--grout-d);color:var(--cream);
+  cursor:pointer;
+  -webkit-tap-highlight-color:transparent;transition:background .2s;
+}
+.fil-btn.active{background:var(--clay);color:var(--white)}
+
+/* Mobile 2-col masonry */
+.gallery-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:3px;
+  background:var(--grout-d);padding:3px;border-radius:var(--r);
+}
+.g-item{
+  position:relative;overflow:hidden;border-radius:1px;
+  background:var(--slate-m);
+  aspect-ratio:4/3;
+  cursor:pointer;
+}
+.g-item img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .45s ease;
+  will-change:transform;
+}
+.g-item:active img{transform:scale(1.03)}
+.g-ov{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(26,39,68,.92) 0%,transparent 52%);
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:10px;
+  /* Always visible on mobile — users see what each photo is */
+  opacity:1;transition:opacity .3s;
+}
+.g-tag{font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:3px}
+.g-desc{font-size:.76rem;color:var(--white);line-height:1.35}
+
+/* ═══════════════════════════════════════════════
+   DESIGN STUDIO — MOBILE-FIRST TILE BUILDER
+═══════════════════════════════════════════════ */
+#design-studio{
+  background:var(--white);
+  padding:var(--sp-xl) 0 var(--sp-lg);
+  position:relative;overflow:hidden;
+  scroll-margin-top:var(--top-offset);
+}
+#design-studio::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:4px;
+  background:repeating-linear-gradient(90deg,
+    var(--gold) 0,var(--gold) 72px,var(--grout-d) 72px,var(--grout-d) 75px,
+    var(--clay) 75px,var(--clay) 147px,var(--grout-d) 147px,var(--grout-d) 150px);
+}
+.builder-hdr{text-align:center;margin-bottom:var(--sp-lg)}
+.b-eye{
+  display:inline-flex;align-items:center;gap:12px;
+  font-size:.68rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--clay);margin-bottom:12px;
+}
+.b-eye::before,.b-eye::after{content:'';display:block;width:28px;height:2px;background:var(--clay)}
+.b-title{font-size:clamp(1.9rem,7vw,3.2rem);font-weight:600;color:var(--slate);line-height:1.12;margin-bottom:10px}
+.b-title em{color:var(--clay);font-style:italic}
+.b-sub{font-size:1rem;color:var(--slate-l);line-height:1.6;max-width:500px;margin:0 auto}
+
+/* ── CANVAS ── */
+.b-canvas-wrap{
+  position:relative;
+  border-radius:var(--r);overflow:hidden;
+  box-shadow:0 0 0 3px var(--grout-d), 0 0 0 6px var(--cream-dark), 0 8px 40px rgba(44,46,51,.14);
+  background:var(--grout-d);
+  /* Fills width on mobile, square aspect */
+  aspect-ratio:4/3;
+  margin-bottom:var(--sp-sm);
+}
+@supports not (aspect-ratio:1){.b-canvas-wrap{padding-top:75%;height:0;overflow:visible}}
+#tileCanvas{display:block;width:100%;height:100%;touch-action:none;cursor:crosshair}
+
+/* Corner decorations */
+.c-corners{position:absolute;inset:0;pointer-events:none;z-index:2}
+.cc{position:absolute;width:12px;height:12px;border-color:var(--gold);border-style:solid;opacity:.6}
+.cc.tl{top:7px;left:7px;border-width:2px 0 0 2px}
+.cc.tr{top:7px;right:7px;border-width:2px 2px 0 0}
+.cc.bl{bottom:7px;left:7px;border-width:0 0 2px 2px}
+.cc.br{bottom:7px;right:7px;border-width:0 2px 2px 0}
+
+/* Tooltip (mobile: shows after tap, auto-hides) */
+.tile-tt{
+  position:absolute;z-index:10;pointer-events:none;
+  background:rgba(26,28,31,.94);border:1px solid rgba(201,168,76,.25);
+  color:white;padding:7px 12px;border-radius:var(--r);
+  font-size:.74rem;white-space:nowrap;opacity:0;
+  transition:opacity .15s;display:flex;align-items:center;gap:5px;
+  box-shadow:0 6px 22px rgba(0,0,0,.3);
+}
+.tile-tt.show{opacity:1}
+.tt-m{font-weight:800;color:var(--gold)}
+.tt-sep{color:rgba(255,255,255,.2)}
+.tt-c{color:rgba(255,255,255,.75)}
+.tt-p{color:var(--clay-l);font-style:italic}
+.tt-z{background:rgba(255,255,255,.1);border-radius:1px;padding:1px 6px;font-size:.64rem;color:rgba(255,255,255,.52)}
+
+/* Canvas drop overlay */
+.drop-overlay{
+  position:absolute;inset:0;z-index:10;
+  background:rgba(201,168,76,.15);
+  border:3px dashed var(--gold);border-radius:var(--r);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
+  opacity:0;pointer-events:none;transition:opacity .2s;
+}
+.drop-overlay.show{opacity:1;pointer-events:all}
+.drop-overlay .di{font-size:2.5rem}
+.drop-overlay .dt{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:.06em;color:var(--slate)}
+.drop-overlay .ds2{font-size:.8rem;color:var(--slate-l)}
+
+/* ── STATUS BAR ── */
+.b-status{
+  background:var(--slate);border-radius:var(--r);
+  padding:10px 16px;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:6px;margin-bottom:var(--sp-sm);
+}
+.bs-d{font-size:.8rem;color:rgba(245,239,228,.58)}
+.bs-d strong{color:var(--gold);font-weight:600}
+.bs-live{display:flex;align-items:center;gap:5px;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(245,239,228,.3)}
+.ldot{width:6px;height:6px;border-radius:50%;background:#4ADE80;animation:lp 2s ease-in-out infinite}
+@keyframes lp{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.82)}}
+
+/* ── MOBILE CONTROLS TABS ── */
+.b-ctrl-tabs{
+  display:flex;gap:0;
+  background:var(--slate);border-radius:var(--r);
+  overflow:hidden;margin-bottom:3px;
+}
+.b-tab{
+  flex:1;display:flex;flex-direction:column;align-items:center;
+  gap:3px;padding:10px 6px;
+  background:transparent;border:none;cursor:pointer;
+  font-family:'DM Sans',sans-serif;font-size:.62rem;font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase;
+  color:rgba(245,239,228,.45);
+  transition:all .22s;min-height:56px;
+  -webkit-tap-highlight-color:transparent;
+}
+.b-tab svg{width:20px;height:20px;flex-shrink:0}
+.b-tab.active{background:var(--clay);color:var(--white)}
+.b-tab:not(.active):active{background:rgba(255,255,255,.08)}
+
+/* ── CONTROL PANELS (one visible at a time) ── */
+.b-panels{
+  background:var(--cream);border-radius:var(--r);
+  margin-bottom:var(--sp-sm);min-height:120px;
+  border:1px solid var(--cream-dark);overflow:hidden;
+}
+.b-panel{display:none;padding:var(--sp-sm)}
+.b-panel.active{display:block}
+.panel-lbl{
+  font-size:.62rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--grout-d);margin-bottom:10px;display:block;
+}
+
+/* Upload panel */
+.upload-zone-builder{
+  border:2px dashed var(--cream-dark);border-radius:var(--r);
+  padding:var(--sp-sm);text-align:center;cursor:pointer;
+  background:var(--white);transition:border-color .2s;
+  -webkit-tap-highlight-color:transparent;
+  min-height:80px;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:6px;
+  position:relative;
+}
+.upload-zone-builder:active{border-color:var(--clay)}
+.upload-zone-builder.has-file{border-color:var(--gold);border-style:solid;background:#FFFBF0}
+.uzb-icon{font-size:1.6rem}
+.uzb-text{font-size:.82rem;color:var(--slate-l);line-height:1.45}
+.uzb-text strong{color:var(--clay)}
+.uzb-preview{
+  width:100%;height:60px;background-size:cover;background-position:center;
+  border-radius:2px;display:none;border:1px solid var(--cream-dark);
+}
+.upload-zone-builder.has-file .uzb-preview{display:block}
+.upload-zone-builder.has-file .uzb-icon{display:none}
+.uzb-fname{font-size:.68rem;color:var(--clay-d);font-weight:600;display:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:180px}
+.upload-zone-builder.has-file .uzb-fname{display:block}
+.uzb-clear{
+  position:absolute;top:6px;right:6px;width:22px;height:22px;
+  background:var(--clay);color:white;border:none;border-radius:1px;
+  font-size:.85rem;cursor:pointer;display:none;
+  align-items:center;justify-content:center;
+}
+.upload-zone-builder.has-file .uzb-clear{display:flex}
+/* Camera capture option */
+.uzb-actions{display:flex;gap:6px;margin-top:8px;width:100%}
+.uzb-action-btn{
+  flex:1;height:38px;border-radius:var(--r);border:none;
+  font-family:'DM Sans',sans-serif;font-size:.76rem;font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;gap:5px;
+}
+.uzb-action-btn.cam{background:var(--slate);color:var(--cream)}
+.uzb-action-btn.gal{background:var(--cream-dark);color:var(--slate)}
+
+/* Custom mat button */
+.custom-mat-btn{
+  display:none;align-items:center;gap:9px;
+  padding:9px 12px;border:1.5px solid var(--gold);
+  background:#FFFBF0;border-radius:var(--r);
+  cursor:pointer;font-family:'DM Sans',sans-serif;
+  font-size:.82rem;font-weight:500;color:var(--slate);
+  width:100%;margin-top:8px;
+  -webkit-tap-highlight-color:transparent;
+}
+.custom-mat-btn.visible{display:flex}
+.custom-mat-btn.active{background:var(--gold);border-color:var(--gold-l)}
+.cmsw{width:28px;height:28px;border-radius:2px;flex-shrink:0;border:1px solid rgba(0,0,0,.12);background-size:cover;background-position:center}
+
+/* Material pills — horizontal scroll */
+.mat-scroll{
+  display:flex;gap:6px;overflow-x:auto;-webkit-overflow-scrolling:touch;
+  scrollbar-width:none;padding-bottom:4px;
+}
+.mat-scroll::-webkit-scrollbar{display:none}
+.mat-pill{
+  flex-shrink:0;display:flex;align-items:center;gap:7px;
+  padding:8px 14px;height:44px;
+  border:1.5px solid var(--cream-dark);background:var(--white);
+  border-radius:22px;cursor:pointer;
+  font-family:'DM Sans',sans-serif;font-size:.8rem;font-weight:600;
+  color:var(--slate);white-space:nowrap;
+  transition:all .2s;-webkit-tap-highlight-color:transparent;
+}
+.mat-pill:active,.mat-pill.active{border-color:var(--clay);background:#FDF0E8;color:var(--clay-d)}
+.mat-swatch{width:22px;height:22px;border-radius:50%;flex-shrink:0;border:1px solid rgba(0,0,0,.1)}
+
+/* Color grid — larger tappable swatches */
+.color-grid{
+  display:grid;grid-template-columns:repeat(6,1fr);gap:6px;
+}
+.col-sw{
+  aspect-ratio:1;border-radius:4px;cursor:pointer;
+  border:3px solid transparent;position:relative;overflow:hidden;
+  min-height:44px;
+  -webkit-tap-highlight-color:transparent;transition:transform .15s;
+}
+.col-sw:active{transform:scale(.94)}
+.col-sw.active{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold)}
+.col-lbl{
+  position:absolute;bottom:0;left:0;right:0;
+  background:rgba(0,0,0,.55);color:white;
+  font-size:.48rem;font-weight:800;letter-spacing:.06em;
+  text-transform:uppercase;text-align:center;
+  padding:2px;line-height:1.6;
+  opacity:0;transition:opacity .2s;
+}
+.col-sw.active .col-lbl{opacity:1}
+
+/* Grout buttons — big tappable */
+.grout-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.grout-btn{
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  padding:10px 6px;height:64px;
+  border:2px solid var(--cream-dark);border-radius:var(--r);
+  cursor:pointer;background:var(--white);
+  transition:all .2s;-webkit-tap-highlight-color:transparent;
+}
+.grout-btn:active,.grout-btn.active{border-color:var(--gold);background:#FFFBF0}
+.grout-chip{width:34px;height:14px;border-radius:2px;border:1px solid rgba(0,0,0,.1)}
+.grout-nm{font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--slate-l)}
+
+/* Size buttons */
+.size-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+.size-btn{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;
+  padding:8px 4px;height:68px;
+  border:2px solid var(--cream-dark);border-radius:var(--r);
+  cursor:pointer;background:var(--white);
+  transition:all .2s;-webkit-tap-highlight-color:transparent;
+  font-family:'DM Sans',sans-serif;
+}
+.size-btn:active,.size-btn.active{border-color:var(--clay);background:#FDF0E8}
+.sz-ico{background:var(--slate-m);border-radius:1px;border:1px solid var(--grout-d)}
+.size-btn.active .sz-ico{background:var(--clay);border-color:var(--clay-d)}
+.sz-d{font-size:.78rem;font-weight:700;color:var(--slate)}
+.sz-n{font-size:.58rem;color:var(--slate-l);text-align:center}
+
+/* Pattern grid — 2-col on mobile */
+.pat-grid-mb{
+  display:grid;grid-template-columns:1fr 1fr;gap:6px;
+}
+.pat-btn-mb{
+  display:flex;align-items:center;gap:8px;
+  padding:9px 10px;border:1.5px solid var(--cream-dark);
+  background:var(--white);border-radius:var(--r);
+  cursor:pointer;font-family:'DM Sans',sans-serif;
+  min-height:var(--tap);transition:all .2s;
+  -webkit-tap-highlight-color:transparent;
+}
+.pat-btn-mb:active,.pat-btn-mb.active{border-color:var(--clay);background:#FDF0E8}
+.pat-prev-sm{width:36px;height:26px;flex-shrink:0;border-radius:2px;overflow:hidden;border:1px solid rgba(0,0,0,.1);background:#8A8680}
+.pat-prev-sm canvas{display:block;width:100%;height:100%}
+.pat-nm{font-size:.8rem;font-weight:700;color:var(--slate);line-height:1}
+.pat-btn-mb.active .pat-nm{color:var(--clay-d)}
+.pat-sb2{font-size:.62rem;color:var(--slate-l);margin-top:1px}
+
+/* ── BUILDER ACTION ROW ── */
+.b-actions{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:8px;margin-top:var(--sp-sm);
+}
+.btn-rand2{
+  display:flex;align-items:center;justify-content:center;gap:7px;
+  height:var(--tap);padding:0 16px;
+  background:var(--slate);color:var(--cream);
+  border:none;border-radius:var(--r);
+  font-family:'DM Sans',sans-serif;font-size:.82rem;font-weight:700;
+  letter-spacing:.07em;cursor:pointer;
+  transition:background .22s;-webkit-tap-highlight-color:transparent;
+}
+.btn-rand2:active{background:var(--slate-m)}
+.btn-rand2 svg{width:16px;height:16px}
+.btn-send2{
+  display:flex;align-items:center;justify-content:center;gap:7px;
+  height:var(--tap);padding:0 16px;
+  background:var(--clay);color:var(--white);
+  border:none;border-radius:var(--r);
+  font-family:'DM Sans',sans-serif;font-size:.82rem;font-weight:700;
+  letter-spacing:.07em;cursor:pointer;
+  transition:background .22s;-webkit-tap-highlight-color:transparent;
+}
+.btn-send2:active{background:var(--clay-d)}
+
+.b-cta-strip{
+  background:linear-gradient(135deg,var(--slate),#363840);
+  border-radius:var(--r);padding:var(--sp-md);
+  margin-top:var(--sp-sm);text-align:center;
+}
+.b-cta-quote{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.05rem;font-style:italic;
+  color:rgba(245,239,228,.68);line-height:1.5;margin-bottom:var(--sp-sm);
+}
+.b-cta-note{font-size:.72rem;color:rgba(245,239,228,.32);letter-spacing:.06em;text-transform:uppercase;margin-bottom:var(--sp-sm)}
+.b-cta-btns{display:flex;gap:8px}
+.b-cta-btns .btn{flex:1;font-size:.8rem;padding:0 12px}
+
+/* ═══════════════════════════════════════════════
+   SERVICE AREA
+═══════════════════════════════════════════════ */
+#service-area{background:var(--cream-dark)}
+.boro-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:3px;background:var(--grout-d);padding:3px;border-radius:var(--r);
+  margin-bottom:var(--sp-md);
+}
+.boro-card{
+  background:var(--white);padding:18px var(--sp-sm);
+  border-radius:1px;position:relative;overflow:hidden;
+  -webkit-tap-highlight-color:transparent;min-height:80px;
+}
+.boro-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--clay)}
+.boro-nm{font-family:'Bebas Neue',sans-serif;font-size:1.25rem;letter-spacing:.04em;color:var(--slate);margin-bottom:4px}
+.boro-nt{font-size:.78rem;color:var(--slate-l);line-height:1.4}
+.area-cta-box{background:var(--slate);border-radius:var(--r);padding:var(--sp-md);margin-bottom:var(--sp-md)}
+.area-cta-box p{font-size:.9rem;color:rgba(245,239,228,.68);line-height:1.6;margin-bottom:var(--sp-sm)}
+.area-cta-box strong{color:var(--gold)}
+.area-big-phone{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  width:100%;height:60px;
+  background:var(--clay);color:var(--white);
+  border-radius:var(--r);border:none;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.5rem;letter-spacing:.08em;
+  cursor:pointer;text-decoration:none;margin-bottom:8px;
+  -webkit-tap-highlight-color:transparent;
+}
+.area-big-phone svg{width:22px;height:22px;animation:phb 3s ease-in-out infinite}
+@keyframes phb{0%,90%,100%{transform:scale(1) rotate(0)}95%{transform:scale(1.1) rotate(10deg)}}
+.area-sms{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  width:100%;height:48px;
+  background:rgba(255,255,255,.08);color:rgba(245,239,228,.7);
+  border-radius:var(--r);border:1px solid rgba(155,149,137,.2);
+  font-family:'DM Sans',sans-serif;font-size:.82rem;font-weight:600;
+  letter-spacing:.06em;text-transform:uppercase;
+  text-decoration:none;
+}
+
+/* ═══════════════════════════════════════════════
+   REVIEWS (horizontal scroll on mobile)
+═══════════════════════════════════════════════ */
+#reviews{background:var(--navy);overflow:hidden;padding-bottom:var(--sp-lg)}
+.rev-hdr{margin-bottom:var(--sp-lg)}
+.rev-t{color:var(--white)}.rev-t em{color:var(--clay)}
+.rev-scroll-wrap{
+  overflow-x:auto;-webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+  padding:4px var(--sp-md) var(--sp-md);
+}
+.rev-scroll-wrap::-webkit-scrollbar{display:none}
+.rev-track{
+  display:flex;gap:14px;
+  width:max-content;
+}
+.rev-card{
+  flex-shrink:0;width:min(320px,80vw);
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(155,149,137,.13);
+  border-radius:var(--r);padding:var(--sp-md);
+}
+.rev-stars{color:var(--gold);font-size:.95rem;margin-bottom:10px}
+.rev-text{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1rem;font-style:italic;
+  color:rgba(245,239,228,.78);line-height:1.6;margin-bottom:14px;
+}
+.rev-auth{font-size:.78rem;font-weight:600;color:var(--gold)}
+.rev-loc{font-size:.7rem;color:rgba(245,239,228,.35);letter-spacing:.08em;text-transform:uppercase;margin-top:2px}
+.rev-tag{display:inline-block;margin-top:8px;background:rgba(193,122,93,.18);color:var(--clay-l);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;padding:2px 8px;border-radius:1px}
+
+/* ═══════════════════════════════════════════════
+   TEAM
+═══════════════════════════════════════════════ */
+#team{background:var(--white)}
+.team-scroll{
+  display:flex;gap:3px;
+  overflow-x:auto;-webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+  background:var(--grout-d);padding:3px;border-radius:var(--r);
+  margin-top:var(--sp-lg);
+}
+.team-scroll::-webkit-scrollbar{display:none}
+.team-card{
+  flex-shrink:0;width:200px;
+  background:var(--cream);border-radius:1px;overflow:hidden;
+}
+.team-photo{width:200px;height:240px;object-fit:cover;object-position:center top;display:block}
+.team-inf{padding:14px}
+.team-nm{font-family:'Cormorant Garamond',serif;font-size:1.08rem;font-weight:600;color:var(--slate);margin-bottom:3px}
+.team-rl{font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--clay)}
+.team-gn{font-size:.78rem;color:var(--slate-l);margin-top:6px;line-height:1.45}
+
+/* ═══════════════════════════════════════════════
+   FAQ
+═══════════════════════════════════════════════ */
+#faq{background:var(--cream)}
+.faq-list{display:flex;flex-direction:column;gap:3px;margin-top:var(--sp-lg)}
+.faq-item{background:var(--white);border-radius:var(--r);overflow:hidden;border-left:3px solid transparent;transition:border-color .25s}
+.faq-item.open{border-left-color:var(--clay)}
+.faq-q{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:16px var(--sp-sm);cursor:pointer;
+  font-weight:500;font-size:1rem;color:var(--slate);
+  min-height:var(--tap);-webkit-tap-highlight-color:transparent;
+}
+.faq-qi{
+  width:28px;height:28px;flex-shrink:0;
+  border:1.5px solid var(--grout);border-radius:var(--r);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.1rem;color:var(--clay);
+  transition:transform .25s,background .25s;
+}
+.faq-item.open .faq-qi{transform:rotate(45deg);background:var(--clay);color:white;border-color:var(--clay)}
+.faq-a{
+  max-height:0;overflow:hidden;
+  transition:max-height .45s cubic-bezier(.25,.46,.45,.94),padding .25s;
+  padding:0 var(--sp-sm);
+  font-size:.92rem;color:var(--slate-l);line-height:1.7;
+}
+.faq-item.open .faq-a{max-height:400px;padding:0 var(--sp-sm) 18px}
+.faq-a strong{color:var(--clay)}
+
+/* ═══════════════════════════════════════════════
+   CONTACT — Mobile-simplified form
+═══════════════════════════════════════════════ */
+#contact{background:var(--clay);position:relative;overflow:hidden}
+#contact::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 26px,rgba(0,0,0,.04) 26px,rgba(0,0,0,.04) 27px)}
+
+.contact-hdr{text-align:center;position:relative;z-index:1;margin-bottom:var(--sp-lg)}
+.contact-hdr-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(2.4rem,10vw,4rem);
+  color:var(--white);line-height:.95;
+  letter-spacing:.02em;margin-bottom:14px;
+}
+.contact-hdr-sub{font-size:1rem;color:rgba(255,255,255,.72);line-height:1.65;max-width:520px;margin:0 auto}
+
+/* Quick contact row */
+.contact-quick{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:8px;position:relative;z-index:1;margin-bottom:var(--sp-lg);
+}
+.cq-btn{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  min-height:56px;border-radius:var(--r);
+  font-family:'DM Sans',sans-serif;font-size:.88rem;font-weight:800;
+  letter-spacing:.06em;text-transform:uppercase;
+  text-decoration:none;
+  -webkit-tap-highlight-color:transparent;transition:filter .2s;
+}
+.cq-btn:active{filter:brightness(.9)}
+.cq-call{background:var(--white);color:var(--clay)}
+.cq-sms{background:rgba(255,255,255,.15);color:var(--white);border:2px solid rgba(255,255,255,.3)}
+.cq-btn svg{width:18px;height:18px}
+
+/* Simplified form */
+.contact-form{
+  background:var(--white);border-radius:var(--r);
+  padding:var(--sp-md);position:relative;z-index:1;
+}
+.contact-form h3{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.35rem;font-weight:600;color:var(--slate);
+  margin-bottom:var(--sp-md);
+}
+.fg{display:flex;flex-direction:column;gap:5px;margin-bottom:12px}
+.fg label{font-size:.65rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--slate-l)}
+.fg label span{color:var(--clay)}
+.fg input,.fg select,.fg textarea{
+  padding:13px 14px;border:1.5px solid var(--cream-dark);
+  border-radius:var(--r);background:var(--cream);
+  font-family:'DM Sans',sans-serif;font-size:1rem;color:var(--slate);
+  transition:border-color .2s;outline:none;
+  /* Minimum 16px to prevent iOS zoom */
+  font-size:16px!important;
+}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--clay)}
+.fg textarea{resize:vertical;min-height:80px}
+.fg select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B7280' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+
+/* Camera/file upload in form */
+.form-upload{
+  border:2px dashed var(--cream-dark);border-radius:var(--r);
+  padding:var(--sp-sm);text-align:center;cursor:pointer;
+  background:var(--cream);margin-bottom:12px;
+}
+.form-upload:active{border-color:var(--clay)}
+.fu-btns{display:flex;gap:8px;margin-top:8px}
+.fu-btn{
+  flex:1;height:44px;border-radius:var(--r);border:none;cursor:pointer;
+  font-family:'DM Sans',sans-serif;font-size:.78rem;font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase;
+  display:flex;align-items:center;justify-content:center;gap:5px;
+  -webkit-tap-highlight-color:transparent;
+}
+.fu-cam{background:var(--slate);color:var(--cream)}
+.fu-lib{background:var(--cream-dark);color:var(--slate)}
+
+.form-submit{
+  width:100%;min-height:56px;padding:0 var(--sp-sm);
+  background:var(--clay);color:var(--white);border:none;border-radius:var(--r);
+  font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:800;
+  letter-spacing:.08em;text-transform:uppercase;
+  cursor:pointer;transition:background .25s;
+  display:flex;align-items:center;justify-content:center;gap:9px;
+  -webkit-tap-highlight-color:transparent;
+}
+.form-submit:active{background:var(--clay-d)}
+.form-legal{font-size:.72rem;color:rgba(44,46,51,.55);text-align:center;margin-top:10px;line-height:1.5}
+.form-legal a{color:var(--clay)}
+
+/* ═══════════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════════ */
+footer{
+  background:#1A1C1F;
+  padding:var(--sp-xl) 0 calc(var(--sp-md) + env(safe-area-inset-bottom,0px));
+}
+.ft-brand{margin-bottom:var(--sp-lg)}
+.ft-logo-row{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.ft-brand p{font-size:.86rem;color:rgba(245,239,228,.4);line-height:1.62;max-width:300px}
+.ft-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-lg);
+  margin-bottom:var(--sp-lg);
+}
+.ft-col h4{font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.ft-col ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.ft-col a{font-size:.84rem;color:rgba(245,239,228,.44);transition:color .2s}
+.ft-col a:active{color:var(--clay-l)}
+.ft-bottom{
+  border-top:1px solid rgba(155,149,137,.1);
+  padding-top:18px;
+  display:flex;flex-direction:column;gap:8px;
+  align-items:center;
+}
+.ft-copy{font-size:.74rem;color:rgba(245,239,228,.26);text-align:center}
+.ft-leg{display:flex;gap:16px}
+.ft-leg a{font-size:.72rem;color:rgba(245,239,228,.26)}
+/* Mobile safety area for footer */
+.ft-safety{height:env(safe-area-inset-bottom,0px)}
+
+/* ═══════════════════════════════════════════════
+   ESTIMATE MODAL
+═══════════════════════════════════════════════ */
+.modal-ov{
+  position:fixed;inset:0;
+  background:rgba(20,22,26,.9);backdrop-filter:blur(8px);
+  z-index:3000;display:flex;align-items:flex-end;justify-content:center;
+  padding:0;opacity:0;pointer-events:none;transition:opacity .3s;
+}
+.modal-ov.open{opacity:1;pointer-events:all}
+.modal{
+  background:var(--white);border-radius:var(--r) var(--r) 0 0;
+  width:100%;max-width:640px;
+  max-height:92svh;overflow-y:auto;
+  -webkit-overflow-scrolling:touch;
+  box-shadow:0 -20px 60px rgba(0,0,0,.4);
+  transform:translateY(100%);
+  transition:transform .35s cubic-bezier(.25,.46,.45,.94);
+}
+.modal-ov.open .modal{transform:translateY(0)}
+
+/* Drag handle */
+.modal-handle{
+  display:flex;justify-content:center;padding:12px 0 0;
+}
+.modal-handle-bar{width:40px;height:4px;background:var(--cream-dark);border-radius:2px}
+
+.modal-top{background:var(--slate);padding:14px var(--sp-md);display:flex;align-items:center;justify-content:space-between}
+.modal-title{font-family:'Cormorant Garamond',serif;font-size:1.32rem;font-weight:600;color:var(--white)}
+.modal-title span{color:var(--clay-l);font-style:italic}
+.modal-x{width:36px;height:36px;background:rgba(255,255,255,.08);border:none;border-radius:var(--r);color:white;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;-webkit-tap-highlight-color:transparent}
+.modal-x:active{background:var(--clay)}
+.modal-body{padding:var(--sp-md)}
+
+.design-snap{display:flex;align-items:center;gap:12px;background:var(--cream);border-radius:var(--r);padding:12px;margin-bottom:var(--sp-md);border:1px solid var(--cream-dark)}
+.snap-cnv{width:96px;height:72px;border-radius:var(--r);border:2px solid var(--grout-d);flex-shrink:0;display:block}
+.snap-inf h4{font-family:'Cormorant Garamond',serif;font-size:.9rem;font-weight:600;color:var(--slate);margin-bottom:6px}
+.snap-badges{display:flex;flex-wrap:wrap;gap:4px}
+.badge{font-size:.58rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:2px 8px;border-radius:2px}
+.b-clay{background:var(--clay);color:white}.b-gold{background:var(--gold);color:var(--slate)}.b-slate{background:var(--slate-m);color:white}.b-stone{background:#8B836E;color:white}
+
+.modal-form .fg{margin-bottom:10px}
+
+/* Photo upload in modal */
+.modal-upload{
+  border:2px dashed var(--cream-dark);border-radius:var(--r);
+  padding:14px;text-align:center;cursor:pointer;background:var(--cream);
+  margin-bottom:12px;-webkit-tap-highlight-color:transparent;
+}
+.modal-upload:active{border-color:var(--clay)}
+.modal-upload-btns{display:flex;gap:6px;margin-top:8px}
+
+.modal-sub{
+  width:100%;min-height:52px;padding:0 var(--sp-sm);
+  background:var(--clay);color:var(--white);border:none;border-radius:var(--r);
+  font-family:'DM Sans',sans-serif;font-size:.9rem;font-weight:800;
+  letter-spacing:.08em;text-transform:uppercase;cursor:pointer;
+  transition:background .25s;display:flex;align-items:center;justify-content:center;gap:8px;
+  -webkit-tap-highlight-color:transparent;
+}
+.modal-sub:active{background:var(--clay-d)}
+.modal-legal{font-size:.7rem;color:var(--slate-l);text-align:center;margin-top:8px;line-height:1.45}
+.modal-legal a{color:var(--clay)}
+
+.success-state{text-align:center;padding:var(--sp-xl) var(--sp-md);display:none}
+.success-state .si{font-size:3rem;margin-bottom:14px}
+.success-state h3{font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--slate);margin-bottom:8px}
+.success-state p{font-size:.9rem;color:var(--slate-l);line-height:1.65}
+
+/* ═══════════════════════════════════════════════
+   LIGHTBOX (bottom-sheet on mobile)
+═══════════════════════════════════════════════ */
+.lb{
+  position:fixed;inset:0;
+  background:rgba(20,22,26,.97);
+  z-index:2500;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  opacity:0;pointer-events:none;transition:opacity .3s;
+  padding:var(--sp-md);
+}
+.lb.open{opacity:1;pointer-events:all}
+.lb-top{
+  position:absolute;top:var(--sp-md);right:var(--sp-md);
+  display:flex;gap:8px;
+}
+.lb-btn{
+  width:40px;height:40px;background:rgba(255,255,255,.12);
+  border:none;border-radius:var(--r);color:white;font-size:1rem;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  -webkit-tap-highlight-color:transparent;
+}
+.lb-btn:active{background:var(--clay)}
+.lb-img{
+  max-width:100%;max-height:80svh;
+  object-fit:contain;border-radius:var(--r);display:block;
+}
+.lb-cap{
+  margin-top:12px;font-size:.86rem;
+  color:rgba(245,239,228,.55);text-align:center;
+  max-width:500px;
+}
+.lb-nav{
+  position:absolute;
+  display:flex;justify-content:space-between;
+  left:8px;right:8px;
+  top:50%;transform:translateY(-50%);
+  pointer-events:none;
+}
+.lb-arr{
+  pointer-events:all;
+  width:42px;height:42px;background:rgba(255,255,255,.12);
+  border:none;border-radius:var(--r);color:white;font-size:1.3rem;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  -webkit-tap-highlight-color:transparent;
+}
+.lb-arr:active{background:var(--clay)}
+
+/* ═══════════════════════════════════════════════
+   TABLET (600px+)
+═══════════════════════════════════════════════ */
+@media(min-width:600px){
+  :root{--top-offset:120px;--nav-h:64px;--sticky-h:56px}
+  body{padding-top:var(--top-offset)}
+  .sticky-cta-brand span{display:inline}
+  .hero-tiles{grid-template-columns:repeat(6,1fr);grid-template-rows:repeat(6,1fr)}
+  .hero-btns{flex-direction:row;max-width:none;justify-content:center}
+  .svc-grid{grid-template-columns:1fr 1fr}
+  .color-grid{grid-template-columns:repeat(6,1fr)}
+  .pat-grid-mb{grid-template-columns:repeat(3,1fr)}
+  .contact-form{max-width:600px;margin:0 auto}
+  .ft-grid{grid-template-columns:repeat(4,1fr)}
+  /* Gallery: larger on tablet */
+  .gallery-grid{grid-template-columns:repeat(3,1fr)}
+  .g-item.tall{grid-row:span 2}.g-item.wide{grid-column:span 2}
+  /* Desktop: hide overlay until hover */
+  .g-ov{opacity:0}
+  .g-item:hover .g-ov{opacity:1}
+  .g-item img{transition:transform .5s}
+  .g-item:hover img{transform:scale(1.05)}
+}
+
+/* ═══════════════════════════════════════════════
+   TABLET LANDSCAPE / SMALL DESKTOP (900px+)
+═══════════════════════════════════════════════ */
+@media(min-width:900px){
+  :root{--sticky-h:48px;--nav-h:68px;--top-offset:116px}
+  body{padding-top:var(--top-offset)}
+  /* Desktop nav */
+  .nav-burger{display:none}
+  .nav-desktop-links{
+    display:flex;align-items:center;gap:6px;
+  }
+  .nav-dl{
+    color:rgba(255,255,255,.82);font-size:.78rem;font-weight:500;
+    text-decoration:none;padding:7px 12px;letter-spacing:.06em;
+    text-transform:uppercase;position:relative;
+    -webkit-tap-highlight-color:transparent;
+    transition:color .25s;
+  }
+  .nav-dl::after{content:'';position:absolute;bottom:3px;left:12px;right:12px;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .25s}
+  .nav-dl:hover::after{transform:scaleX(1)}
+  .nav-ds-tab{background:rgba(201,168,76,.15);color:var(--gold)!important;border-radius:var(--r);border:1.5px solid rgba(201,168,76,.38)}
+  .nav-ds-tab:hover{background:rgba(201,168,76,.25)!important}
+  .nav-ds-tab::after{display:none!important}
+  .nav-cta-btn{background:var(--gold);color:var(--slate);padding:8px 16px;border-radius:var(--r);font-weight:700;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;transition:all .25s}
+  .nav-cta-btn:hover{background:var(--clay);color:white}
+
+  .mobile-nav-panel{display:none!important}
+  .sticky-cta{padding:0 var(--sp-lg)}
+
+  /* Builder: 3-column on desktop */
+  .b-builder-desktop{
+    display:grid!important;
+    grid-template-columns:220px 1fr 188px;
+    gap:10px;
+  }
+  .b-canvas-col{grid-column:2}
+  .b-left-col{grid-column:1;grid-row:1}
+  .b-right-col{grid-column:3;grid-row:1}
+  /* Hide mobile tabs & panels */
+  .b-ctrl-tabs,.b-panels,.b-actions{display:none!important}
+  /* Show desktop sidebar controls */
+  .b-desktop-left,.b-desktop-right{display:block!important}
+  .b-canvas-wrap{aspect-ratio:4/3}
+
+  /* Section layouts */
+  .story-layout{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+  .story-photo-wrap{margin-top:0}
+  .story-photo-main img{height:420px}
+  .story-photo-accent{width:46%;right:-16px}
+  .svc-grid{grid-template-columns:repeat(3,1fr)}
+  .svc-card{flex-direction:column;padding:var(--sp-md) var(--sp-sm) var(--sp-sm)}
+  .svc-card:hover{background:var(--clay)}
+  .svc-card:hover .svc-title,.svc-card:hover .svc-desc,.svc-card:hover .svc-num{color:white}
+  .svc-card:hover .svc-icon{background:rgba(255,255,255,.18)}
+  .svc-card{transition:background .35s;cursor:pointer}
+  .svc-title{transition:color .35s}.svc-desc{transition:color .35s}.svc-num{transition:color .35s}
+
+  .contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+  .contact-hdr{text-align:left}
+  .contact-quick{max-width:none}
+  .contact-form{max-width:none}
+
+  .team-scroll{flex-wrap:nowrap;overflow-x:visible;display:grid;grid-template-columns:repeat(4,1fr)}
+  .team-card{width:auto}
+  .team-photo{width:100%;height:220px}
+
+  .area-layout{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+
+  .faq-layout{display:grid;grid-template-columns:1fr 1.4fr;gap:72px;align-items:start}
+  .faq-sticky{position:sticky;top:calc(var(--top-offset) + 20px)}
+
+  .ft-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:44px}
+  .ft-grid{display:none}
+  .ft-brand{margin-bottom:0}
+  .ft-bottom{flex-direction:row;justify-content:space-between}
+
+  .rev-scroll-wrap{padding:4px 0 var(--sp-md)}
+  .rev-track{animation:scrollRevs 36s linear infinite}
+  .rev-track:hover{animation-play-state:paused}
+  @keyframes scrollRevs{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+  .rev-card{width:370px}
+
+  .modal-ov{align-items:center}
+  .modal{border-radius:var(--r);max-width:640px;max-height:90svh}
+  .modal-handle{display:none}
+  .modal{transform:translateY(24px) scale(.97)}
+  .modal-ov.open .modal{transform:none}
+
+  .hero-btns{flex-direction:row;max-width:none;justify-content:center}
+  .hero-tiles{grid-template-columns:repeat(8,1fr);grid-template-rows:repeat(6,1fr)}
+}
+
+/* ═══════════════════════════════════════════════
+   FULL DESKTOP (1200px+)
+═══════════════════════════════════════════════ */
+@media(min-width:1200px){
+  .wrap{padding:0 var(--sp-xl)}
+  .b-builder-desktop{grid-template-columns:240px 1fr 200px}
+  .svc-card{min-height:240px}
+}
+
+/* ═══════════════════════════════════════════════
+   DESKTOP SIDEBAR CONTROLS (hidden on mobile)
+═══════════════════════════════════════════════ */
+.b-desktop-left,.b-desktop-right{display:none}
+.b-desktop-left,.b-desktop-right{
+  background:var(--cream);border:1px solid var(--cream-dark);
+  border-radius:var(--r);overflow:hidden;
+}
+.dc-group{padding:12px 14px;border-bottom:1px solid var(--cream-dark)}
+.dc-group:last-child{border-bottom:none}
+.dc-lbl{font-size:.6rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--grout-d);display:block;margin-bottom:8px}
+
+/* Desktop upload zone */
+.dc-upload{border:2px dashed var(--cream-dark);border-radius:var(--r);padding:10px;text-align:center;cursor:pointer;background:var(--white);transition:border-color .2s;margin-bottom:3px}
+.dc-upload:hover{border-color:var(--clay);background:#FDF6F0}
+.dc-upload.has-file{border-color:var(--gold);border-style:solid;background:#FFFBF0}
+.dc-upreview{width:100%;height:46px;background-size:cover;background-position:center;border-radius:1px;display:none;border:1px solid var(--cream-dark);margin-bottom:4px}
+.dc-upload.has-file .dc-upreview{display:block}
+.dc-upload.has-file .dc-uicon,.dc-upload.has-file .dc-utext{display:none}
+.dc-ufname{font-size:.62rem;color:var(--clay-d);font-weight:600;display:none;margin-bottom:3px}
+.dc-upload.has-file .dc-ufname{display:block}
+.dc-uicon{font-size:1.2rem;margin-bottom:3px}
+.dc-utext{font-size:.7rem;color:var(--slate-l);line-height:1.35}
+.dc-utext strong{color:var(--clay);font-size:.72rem}
+.dc-uclear{position:absolute;top:5px;right:5px;width:20px;height:20px;background:var(--clay);color:white;border:none;border-radius:1px;font-size:.75rem;cursor:pointer;display:none;align-items:center;justify-content:center}
+.dc-upload.has-file .dc-uclear{display:flex}
+.dc-upload-wrap{position:relative}
+
+.dc-custom-mat{display:none;align-items:center;gap:8px;padding:6px 8px;border:1.5px solid var(--gold);background:#FFFBF0;border-radius:var(--r);cursor:pointer;font-family:'DM Sans',sans-serif;font-size:.78rem;font-weight:500;color:var(--slate);width:100%;margin-top:3px}
+.dc-custom-mat.visible{display:flex}
+.dc-custom-mat.active{background:var(--gold)}
+.dc-cmsw{width:24px;height:24px;border-radius:2px;flex-shrink:0;border:1px solid rgba(0,0,0,.1);background-size:cover;background-position:center}
+
+.dc-mat-list{display:flex;flex-direction:column;gap:2px}
+.dc-mat-btn{display:flex;align-items:center;gap:8px;padding:6px 8px;border:1.5px solid transparent;background:var(--white);border-radius:var(--r);cursor:pointer;font-family:'DM Sans',sans-serif;font-size:.78rem;font-weight:500;color:var(--slate);transition:all .18s;width:100%}
+.dc-mat-btn:hover{border-color:var(--clay-l);background:#FEF8F4}
+.dc-mat-btn.active{border-color:var(--clay);background:#FDF0E8}
+.dc-sw{width:24px;height:24px;border-radius:2px;flex-shrink:0;border:1px solid rgba(0,0,0,.1)}
+.dc-mn{font-size:.78rem;font-weight:600;color:var(--slate)}
+.dc-md{font-size:.6rem;color:var(--slate-l);margin-top:1px}
+.dc-mat-btn.active .dc-mn{color:var(--clay-d)}
+
+.dc-col-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+.dc-col-sw{aspect-ratio:1;border-radius:3px;cursor:pointer;border:2.5px solid transparent;position:relative;overflow:hidden;transition:all .18s}
+.dc-col-sw:hover{transform:scale(1.07);box-shadow:0 3px 12px rgba(0,0,0,.2)}
+.dc-col-sw.active{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold)}
+.dc-col-sw .col-lbl{opacity:0;transition:opacity .2s}
+.dc-col-sw:hover .col-lbl,.dc-col-sw.active .col-lbl{opacity:1}
+
+.dc-grout-row{display:flex;gap:3px}
+.dc-grout-btn{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;padding:6px 2px;border:2px solid transparent;border-radius:var(--r);cursor:pointer;background:var(--white);transition:all .18s}
+.dc-grout-btn:hover{border-color:var(--clay-l)}.dc-grout-btn.active{border-color:var(--gold);background:#FFFBF0}
+.dc-grout-chip{width:28px;height:11px;border-radius:2px;border:1px solid rgba(0,0,0,.1)}
+
+.dc-size-list{display:flex;flex-direction:column;gap:2px}
+.dc-size-btn{display:flex;align-items:center;gap:7px;padding:6px 8px;border:1.5px solid transparent;background:var(--white);border-radius:var(--r);cursor:pointer;font-family:'DM Sans',sans-serif;width:100%;transition:all .18s}
+.dc-size-btn:hover{border-color:var(--clay-l)}.dc-size-btn.active{border-color:var(--clay);background:#FDF0E8}
+.dc-sz-vis{width:28px;height:20px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.dc-sz-d{font-size:.78rem;font-weight:700;color:var(--slate);line-height:1}
+.dc-sz-n{font-size:.6rem;color:var(--slate-l);margin-top:1px}
+
+.dc-pat-list{padding:12px 11px}
+.dc-pat-btns{display:flex;flex-direction:column;gap:3px}
+.dc-pat-btn{display:flex;align-items:center;gap:8px;padding:8px 9px;border:1.5px solid transparent;background:var(--white);border-radius:var(--r);cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .18s;width:100%}
+.dc-pat-btn:hover{border-color:var(--clay-l);background:#FEF8F4}
+.dc-pat-btn.active{border-color:var(--clay);background:#FDF0E8}
+.dc-pat-prev{width:36px;height:26px;flex-shrink:0;border-radius:2px;overflow:hidden;border:1px solid rgba(0,0,0,.1);background:#8A8680}
+.dc-pat-nm{font-size:.76rem;font-weight:700;color:var(--slate);line-height:1}
+.dc-pat-btn.active .dc-pat-nm{color:var(--clay-d)}
+.dc-pat-sb{font-size:.58rem;color:var(--slate-l);margin-top:1px}
+
+.dc-rand-btn{width:calc(100% - 26px);margin:10px 13px;padding:9px 12px;background:var(--slate);color:var(--white);border:none;border-radius:var(--r);font-family:'DM Sans',sans-serif;font-size:.76rem;font-weight:700;letter-spacing:.07em;cursor:pointer;transition:all .22s;display:flex;align-items:center;justify-content:center;gap:7px}
+.dc-rand-btn:hover{background:var(--clay);transform:translateY(-1px)}
+
+/* Desktop CTA row */
+.b-desktop-cta{
+  display:none;
+  background:linear-gradient(135deg,var(--slate),#363840);
+  border-radius:var(--r);padding:22px 28px;
+  align-items:center;justify-content:space-between;
+  gap:20px;flex-wrap:wrap;margin-top:4px;
+}
+@media(min-width:900px){.b-desktop-cta{display:flex}}
+.bdc-l{flex:1}
+.bdc-cap{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-style:italic;color:rgba(245,239,228,.66);line-height:1.48;margin-bottom:4px}
+.bdc-note{font-size:.7rem;color:rgba(245,239,228,.3);letter-spacing:.06em;text-transform:uppercase}
+.bdc-r{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.bdc-send{background:var(--clay);color:var(--white);border:none;border-radius:var(--r);padding:14px 24px;font-family:'DM Sans',sans-serif;font-size:.82rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:all .25s;display:flex;align-items:center;gap:8px;white-space:nowrap}
+.bdc-send:hover{background:var(--clay-d);transform:translateY(-1px)}
+.bdc-ph{display:flex;align-items:center;gap:7px;color:var(--gold);font-weight:700;font-size:.86rem;letter-spacing:.04em;padding:12px 13px;border:2px solid rgba(201,168,76,.28);border-radius:var(--r);transition:all .22s;white-space:nowrap}
+.bdc-ph:hover{border-color:var(--gold)}
+.bdc-ph svg{width:14px;height:14px}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════
+     STICKY TOP CTA BAR
+═══════════════════════════════════════════════ -->
+<div class="sticky-cta">
+  <span class="sticky-cta-brand">Nick the Tile Man <span>· NYC</span></span>
+  <a href="tel:+19178658693" class="sc-call">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l1.27-.85a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    Call Nick
+  </a>
+  <a href="#contact" class="sc-est">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+    Free Estimate
+  </a>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════════════════ -->
+<nav id="mainNav">
+  <a href="#hero" class="nav-logo" aria-label="Nick the Tile Man Home">
+    <div class="nav-logo-tiles"><span></span><span></span><span></span><span></span></div>
+    <div class="nav-lt">Nick the Tile Man</div>
+  </a>
+
+  <!-- Desktop links (900px+) -->
+  <div class="nav-desktop-links">
+    <a href="#services" class="nav-dl">Services</a>
+    <a href="#story" class="nav-dl">Our Story</a>
+    <a href="#portfolio" class="nav-dl">Gallery</a>
+    <a href="#design-studio" class="nav-dl nav-ds-tab">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0;margin-right:3px"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M9 3v18"/></svg>
+      Design Studio
+    </a>
+    <a href="#faq" class="nav-dl">FAQs</a>
+    <a href="tel:+19178658693" class="nav-cta-btn">📞 917-865-8693</a>
+  </div>
+
+  <!-- Hamburger (mobile) -->
+  <button class="nav-burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ═══════════════════════════════════════════════
+     FULL-SCREEN MOBILE NAV
+═══════════════════════════════════════════════ -->
+<div class="mobile-nav-panel" id="mobileNav" role="navigation" aria-label="Main navigation">
+  <div class="mnp-inner">
+    <a href="#hero" class="mnp-link" data-close-nav>
+      <span class="mnp-link-text" style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--cream)">Home</span>
+      <div class="mnp-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></div>
+    </a>
+    <a href="#services" class="mnp-link" data-close-nav>
+      <span style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--cream)">Services</span>
+      <div class="mnp-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M9 3v18"/></svg></div>
+    </a>
+    <a href="#portfolio" class="mnp-link" data-close-nav>
+      <span style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--cream)">Tile Gallery</span>
+      <div class="mnp-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></div>
+    </a>
+    <a href="#design-studio" class="mnp-link mnp-ds" data-close-nav>
+      <span class="mnp-link-text" style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gold)">Design Studio</span>
+      <div class="mnp-link-icon" style="border-color:rgba(201,168,76,.3)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--gold)"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+    </a>
+    <a href="#story" class="mnp-link" data-close-nav>
+      <span style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--cream)">About Nick</span>
+      <div class="mnp-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+    </a>
+    <a href="#reviews" class="mnp-link" data-close-nav>
+      <span style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--cream)">Reviews</span>
+      <div class="mnp-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+    </a>
+    <a href="#contact" class="mnp-link" data-close-nav>
+      <span style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--cream)">Contact</span>
+      <div class="mnp-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+    </a>
+
+    <div class="mnp-bottom">
+      <a href="tel:+19178658693" class="mnp-cta-call" data-close-nav>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l1.27-.85a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Call Nick: (917) 865-8693
+      </a>
+      <a href="#contact" class="mnp-cta-est" data-close-nav>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
+        Get a Free Estimate
+      </a>
+      <div class="mnp-badges">
+        <span class="mnp-badge">Fully Insured</span>
+        <span class="mnp-badge">3rd Generation</span>
+        <span class="mnp-badge">Brooklyn Roots</span>
+        <span class="mnp-badge">Free Estimates</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Estimate Modal -->
+<div class="modal-ov" id="estimateModal">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-handle"><div class="modal-handle-bar"></div></div>
+    <div class="modal-top">
+      <h3 class="modal-title" id="modalTitle">Send Your <span>Design to Nick</span></h3>
+      <button class="modal-x" id="modalClose" aria-label="Close">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="design-snap">
+        <canvas class="snap-cnv" id="snapCanvas" width="96" height="72"></canvas>
+        <div class="snap-inf">
+          <h4>Your Tile Design</h4>
+          <div class="snap-badges">
+            <span class="badge b-clay" id="bMat">Ceramic</span>
+            <span class="badge b-gold" id="bCol">White</span>
+            <span class="badge b-slate" id="bPat">Grid Pattern</span>
+            <span class="badge b-stone" id="bSz">6″×6″</span>
+          </div>
+        </div>
+      </div>
+      <div id="formArea">
+        <div class="modal-form">
+          <div class="fg"><label>Your Name <span>*</span></label>
+            <input type="text" id="fName" placeholder="First and last name" autocomplete="name" autocapitalize="words">
+          </div>
+          <div class="fg"><label>Phone Number <span>*</span></label>
+            <input type="tel" id="fPhone" placeholder="(917) 000-0000" autocomplete="tel" inputmode="tel">
+          </div>
+          <div class="fg"><label>Email Address</label>
+            <input type="email" id="fEmail" placeholder="you@example.com" autocomplete="email" inputmode="email">
+          </div>
+          <div class="fg"><label>Borough / Area <span>*</span></label>
+            <select id="fArea" autocomplete="address-level2">
+              <option value="">Select your borough...</option>
+              <option>Brooklyn</option><option>Queens</option><option>Manhattan</option>
+              <option>Nassau County (Long Island)</option><option>Other NYC Area</option>
+            </select>
+          </div>
+          <div class="fg"><label>Project Type</label>
+            <select id="fProj"><option value="">Select type...</option>
+              <option>Bathroom Wall Tiles</option><option>Bathroom Floor Tiles</option>
+              <option>Kitchen Backsplash</option><option>Shower Installation</option>
+              <option>Tile Repair</option><option>Re-Grouting</option><option>Other</option>
+            </select>
+          </div>
+          <div class="fg"><label>Notes</label>
+            <textarea id="fNotes" placeholder="Room size, current condition, timeline..." rows="3"></textarea>
+          </div>
+          <div class="modal-upload">
+            <div>📷 <strong>Upload Photos</strong> — helps Nick give an accurate estimate</div>
+            <div class="modal-upload-btns">
+              <button class="fu-btn fu-cam" type="button" onclick="document.getElementById('muCamera').click()">📷 Take Photo</button>
+              <button class="fu-btn fu-lib" type="button" onclick="document.getElementById('muLibrary').click()">🖼 Photo Library</button>
+            </div>
+            <input type="file" id="muCamera" accept="image/*" capture="environment" style="display:none" multiple>
+            <input type="file" id="muLibrary" accept="image/*" style="display:none" multiple>
+          </div>
+          <button class="modal-sub" id="modalSub">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
+            Send Design + Get Free Estimate
+          </button>
+          <p class="modal-legal">By submitting you agree to be contacted by Nick the Tile Man at <a href="tel:+19178658693">(917) 865-8693</a>. We never share your info.</p>
+        </div>
+      </div>
+      <div class="success-state" id="successState">
+        <div class="si">🏆</div>
+        <h3>Sent to Nick!</h3>
+        <p>Nick will review your design and be in touch within 24 hours. Or call <strong>(917) 865-8693</strong> now for immediate help.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Lightbox -->
+<div class="lb" id="lb" role="dialog" aria-modal="true">
+  <div class="lb-top">
+    <button class="lb-btn" id="lbClose" aria-label="Close">✕</button>
+  </div>
+  <div class="lb-nav">
+    <button class="lb-arr" id="lbPrev" aria-label="Previous">‹</button>
+    <button class="lb-arr" id="lbNext" aria-label="Next">›</button>
+  </div>
+  <img class="lb-img" id="lbImg" src="" alt="" loading="lazy">
+  <p class="lb-cap" id="lbCap"></p>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-tiles">
+    <div class="ht"></div><div class="ht"></div><div class="ht"></div><div class="ht"></div>
+    <div class="ht"></div><div class="ht"></div><div class="ht"></div><div class="ht"></div>
+    <div class="ht"></div><div class="ht"></div><div class="ht"></div><div class="ht"></div>
+    <div class="ht"></div><div class="ht"></div><div class="ht"></div><div class="ht"></div>
+    <div class="ht"></div><div class="ht"></div><div class="ht"></div><div class="ht"></div>
+    <div class="ht"></div><div class="ht"></div><div class="ht"></div><div class="ht"></div>
+    <div class="ht"></div><div class="ht"></div><div class="ht"></div><div class="ht"></div>
+    <div class="ht"></div><div class="ht"></div><div class="ht"></div><div class="ht"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-eye">Third-Generation NYC Tile Specialists</div>
+    <h1 class="hero-title"><span class="ac">Nick</span><br>the <span class="go">Tile</span><br>Man</h1>
+    <p class="hero-sub">Where Brooklyn Craftsmanship Meets Modern Artistry</p>
+    <p class="hero-desc">From NYC subway stations to the original Nathan's Famous — our family has been setting tiles across New York City for over 80 years.</p>
+    <div class="hero-btns">
+      <button class="btn-studio" onclick="document.querySelector('#design-studio').scrollIntoView({behavior:'smooth'})">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg>
+        Try Design Studio
+      </button>
+      <a href="tel:+19178658693" class="btn btn-gold">📞 917-865-8693</a>
+      <a href="#contact" class="btn btn-outline-w">Free Estimate</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stats-inner">
+      <div class="hstat"><div class="hstat-n">80+</div><div class="hstat-l">Years</div></div>
+      <div class="hstat"><div class="hstat-n">3rd</div><div class="hstat-l">Generation</div></div>
+      <div class="hstat"><div class="hstat-n">5★</div><div class="hstat-l">Rated</div></div>
+      <div class="hstat"><div class="hstat-n">4</div><div class="hstat-l">Boroughs</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Trust Bar -->
+<div class="trust-bar">
+  <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Fully Licensed & Insured</div>
+  <div class="trust-div">·</div>
+  <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Family-Owned, Brooklyn Roots</div>
+  <div class="trust-div">·</div>
+  <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Free Estimates</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     SERVICES
+═══════════════════════════════════════════════ -->
+<section id="services">
+  <div class="wrap">
+    <div class="svc-hdr">
+      <div class="sec-lbl reveal">Our Core Services</div>
+      <h2 class="sec-title reveal r1">What We Do <em>Best</em></h2>
+      <p class="sec-intro reveal r2">From floor-to-ceiling bathroom transformations to precision kitchen backsplashes — every job is a work of art.</p>
+    </div>
+    <div class="svc-grid reveal">
+      <div class="svc-card"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></div><div class="svc-body"><div class="svc-num">01</div><h3 class="svc-title">Bathroom Tile Installation</h3><p class="svc-desc">Complete wall-to-wall transformations. Porcelain, ceramic, marble, natural stone. Floors, walls, niches, ceilings.</p></div></div>
+      <div class="svc-card"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/></svg></div><div class="svc-body"><div class="svc-num">02</div><h3 class="svc-title">Kitchen Backsplash</h3><p class="svc-desc">Subway tile, mosaic, tumbled marble — stunning backsplashes that become the centerpiece of your kitchen.</p></div></div>
+      <div class="svc-card"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div><div class="svc-body"><div class="svc-num">03</div><h3 class="svc-title">All Types of Tile Repair</h3><p class="svc-desc">Cracked, loose, or hollow tiles? We identify and fix the root cause — done right the first time.</p></div></div>
+      <div class="svc-card"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg></div><div class="svc-body"><div class="svc-num">04</div><h3 class="svc-title">Re-Grouting & Caulk</h3><p class="svc-desc">Old grout discolored or cracking? Fresh grout and caulk as preventive maintenance protecting your tiles.</p></div></div>
+      <div class="svc-card"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 14.66V20a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2h5.34"/><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"/></svg></div><div class="svc-body"><div class="svc-num">05</div><h3 class="svc-title">Shower & Bathtub Leak Repair</h3><p class="svc-desc">Water leaking downstairs from your shower? We diagnose and repair shower pan leaks — often without full gut renovation.</p></div></div>
+      <div class="svc-card"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 6l11 11L23 6"/><path d="M12 17V3"/></svg></div><div class="svc-body"><div class="svc-num">06</div><h3 class="svc-title">Large Format & Natural Stone</h3><p class="svc-desc">Oversized porcelain, marble floors, granite, glass, and mosaic artworks. Expert technique — no lippage guaranteed.</p></div></div>
+    </div>
+    <div style="text-align:center;margin-top:var(--sp-lg)" class="reveal r2">
+      <a href="tel:+19178658693" class="btn btn-clay" style="gap:8px">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l1.27-.85a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Call Nick for a Free Estimate
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<div class="stats-sec">
+  <div class="wrap">
+    <div class="stats-row reveal">
+      <div class="stat-blk"><span class="stat-n" data-count="80">0</span>+<div class="stat-lbl">Years of Experience</div><div class="stat-d">Three generations of tile mastery</div></div>
+      <div class="stat-blk"><span class="stat-n" data-count="500">0</span>+<div class="stat-lbl">Projects Completed</div><div class="stat-d">All NYC boroughs & Long Island</div></div>
+      <div class="stat-blk"><span class="stat-n" data-count="100">0</span>%<div class="stat-lbl">Satisfaction Guaranteed</div><div class="stat-d">Your tile work must look amazing</div></div>
+      <div class="stat-blk"><span class="stat-n" data-count="4">0</span><div class="stat-lbl">Boroughs Served</div><div class="stat-d">Brooklyn · Queens · Manhattan · LI</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     STORY
+═══════════════════════════════════════════════ -->
+<section id="story">
+  <div class="wrap">
+    <div class="story-layout">
+      <div>
+        <div class="sec-lbl story-lbl reveal">Our Heritage</div>
+        <h2 class="sec-title story-title reveal r1">A <em>Three-Generation</em> Brooklyn Legacy</h2>
+        <p class="story-body reveal r2">It all started with my grandfather, who arrived in America in the early 1900s and settled in <strong>Brooklyn, New York</strong>, working as a tile setter. When my father was just 16, he had to quit school to work with his father.</p>
+        <div class="story-quote reveal r2"><p>"Father and grandfather installed tiles throughout the subway stations being built across Brooklyn and New York City — laying the foundation of this city, one tile at a time."</p></div>
+        <p class="story-body reveal r3">As my father's reputation grew, he was hired to tile the original <strong>Nathan's Famous of Coney Island</strong>. That tile job lasted over <strong>80 years</strong> — until Superstorm Sandy in 2012.</p>
+        <div class="nathans-box reveal r3"><span style="font-size:1.6rem;flex-shrink:0">🌭</span><p>My father's installation at the <strong>original Nathan's Famous in Coney Island</strong> stood for over 80 years — one of NYC's most legendary tile jobs.</p></div>
+        <div class="gen-row reveal r4">
+          <div class="gen-b"><div class="gen-nm">Grandfather</div><div class="gen-rl">1st Gen · 1900s</div></div>
+          <div class="gen-b"><div class="gen-nm">Nick Sr.</div><div class="gen-rl">2nd Gen · Founder</div></div>
+          <div class="gen-b"><div class="gen-nm">Nick Jr.</div><div class="gen-rl">3rd Gen · CEO</div></div>
+        </div>
+      </div>
+      <div class="story-photo-wrap reveal r2">
+        <div class="story-photo-main">
+          <img src="https://nickthetileman.com/wp-content/uploads/2024/03/1603193197bathroom149ave-003-1.jpg" alt="Nick Jr. the Tile Man removing old grout" loading="lazy" width="600" height="450">
+          <div class="story-photo-badge">Nick Jr. removing old grout · Brooklyn, NY</div>
+        </div>
+        <div class="story-photo-accent">
+          <img src="https://nickthetileman.com/wp-content/uploads/2024/04/1603187111grandpa1.jpg" alt="Nick Sr., the original Tile Man, in 1958" loading="lazy" width="300" height="400">
+          <div class="story-photo-caption">Nick Sr. · 1958</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     PORTFOLIO
+═══════════════════════════════════════════════ -->
+<section id="portfolio">
+  <div class="wrap">
+    <div class="port-hdr">
+      <div class="sec-lbl reveal">Real Projects</div>
+      <h2 class="sec-title reveal r1">Our <em>Portfolio</em></h2>
+      <p class="sec-intro reveal r2">Tap any photo to see full detail. Every project is a collaboration.</p>
+      <div class="port-filter reveal r2" role="tablist">
+        <button class="fil-btn active" data-f="all" role="tab" aria-selected="true">All</button>
+        <button class="fil-btn" data-f="bathroom" role="tab" aria-selected="false">Bathroom</button>
+        <button class="fil-btn" data-f="kitchen" role="tab" aria-selected="false">Kitchen</button>
+        <button class="fil-btn" data-f="floor" role="tab" aria-selected="false">Floor</button>
+        <button class="fil-btn" data-f="mosaic" role="tab" aria-selected="false">Mosaic</button>
+      </div>
+    </div>
+    <div class="gallery-grid reveal" id="galleryGrid">
+      <div class="g-item tall" data-cat="bathroom mosaic" data-cap="Mosaic tiles + hand-made ceramic wall tiles — Brooklyn, NY.">
+        <img src="https://nickthetileman.com/wp-content/uploads/2025/03/Mosaic-tiles-installed-on-the-bathroom-wall-next-to-hand-made-ceramic-wall-tiles._-1.jpg" alt="Mosaic bathroom tiles Brooklyn" loading="lazy" width="600" height="800">
+        <div class="g-ov"><div class="g-tag">Bathroom · Mosaic</div><div class="g-desc">Handmade ceramic + mosaic — Brooklyn, NY</div></div>
+      </div>
+      <div class="g-item" data-cat="kitchen" data-cap="Tumbled marble backsplash in various sizes and colors — natural stone beauty.">
+        <img src="https://nickthetileman.com/wp-content/uploads/2024/03/Installing-Natural-Stone-Tiles_img.jpg" alt="Tumble marble backsplash" loading="lazy" width="600" height="450">
+        <div class="g-ov"><div class="g-tag">Kitchen · Natural Stone</div><div class="g-desc">Tumbled marble backsplash</div></div>
+      </div>
+      <div class="g-item" data-cat="kitchen" data-cap="4″×12″ subway tile with designer 6″×6″ accent tiles by the stove.">
+        <img src="https://nickthetileman.com/wp-content/uploads/2024/12/Untitled-design-1.png" alt="Subway tile kitchen backsplash" loading="lazy" width="600" height="450">
+        <div class="g-ov"><div class="g-tag">Kitchen · Subway Tile</div><div class="g-desc">4″×12″ subway + designer accent</div></div>
+      </div>
+      <div class="g-item wide" data-cat="bathroom floor" data-cap="Black & white 6″×6″ octagon ceramic floor tile in a half-bathroom.">
+        <img src="https://nickthetileman.com/wp-content/uploads/2024/04/image_nick_nw-e1713217643350.jpg" alt="Octagon floor tile" loading="lazy" width="800" height="450">
+        <div class="g-ov"><div class="g-tag">Half Bath · Floor</div><div class="g-desc">Classic octagon ceramic floor tile</div></div>
+      </div>
+      <div class="g-item" data-cat="floor mosaic" data-cap="Black marble 12″×12″ mosaic mesh with marble saddle threshold — Forest Hills, NY.">
+        <img src="https://nickthetileman.com/wp-content/uploads/2024/04/img_nick_neww.jpg" alt="Black marble mosaic foyer" loading="lazy" width="600" height="450">
+        <div class="g-ov"><div class="g-tag">Foyer · Marble Mosaic</div><div class="g-desc">Black marble mesh — Forest Hills, NY</div></div>
+      </div>
+      <div class="g-item tall" data-cat="bathroom mosaic" data-cap="White subway + Royal Blue 8″×8″ ceramic tiles with marble-shelved niches.">
+        <img src="https://nickthetileman.com/wp-content/uploads/2024/04/img_nickk_new-e1713217696854.jpg" alt="Blue and white bathroom niche" loading="lazy" width="600" height="800">
+        <div class="g-ov"><div class="g-tag">Bathroom · Niche Design</div><div class="g-desc">Subway + Royal Blue with marble niches</div></div>
+      </div>
+      <div class="g-item wide" data-cat="kitchen mosaic" data-cap="Kitchen backsplash with subway tiles and mosaic accent over the stove.">
+        <img src="https://nickthetileman.com/wp-content/uploads/2025/03/Backsplash-subway-tiles-with-mosaic-tiles-over-the-stove.jpeg" alt="Kitchen backsplash mosaic over stove" loading="lazy" width="800" height="450">
+        <div class="g-ov"><div class="g-tag">Kitchen · Backsplash</div><div class="g-desc">Subway + mosaic accent over the stove</div></div>
+      </div>
+      <div class="g-item" data-cat="mosaic floor" data-cap="Individual mosaic tiles installed one-by-one in an apartment hallway — Brooklyn, NY.">
+        <img src="https://nickthetileman.com/wp-content/uploads/2025/03/Mosaic-tiles-individually-installed-in-a-hallway-in-Brooklyn-NY.jpeg" alt="Mosaic hallway Brooklyn" loading="lazy" width="600" height="450">
+        <div class="g-ov"><div class="g-tag">Hallway · Hand-Set Mosaic</div><div class="g-desc">Individually placed — Brooklyn</div></div>
+      </div>
+      <div class="g-item" data-cat="floor" data-cap="Brick-face tiles installed and grouted in a dining room — Lynbrook, NY.">
+        <img src="https://nickthetileman.com/wp-content/uploads/2025/03/Brick-tiles-installed-in-dinning-room-Lynbrook-NY.jpeg" alt="Brick tiles dining room" loading="lazy" width="600" height="450">
+        <div class="g-ov"><div class="g-tag">Dining Room · Brick Tile</div><div class="g-desc">Brick-face tile — Lynbrook, NY</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     DESIGN STUDIO
+═══════════════════════════════════════════════ -->
+<section id="design-studio">
+  <div class="wrap">
+    <div class="builder-hdr">
+      <div class="b-eye">Interactive Design Tool</div>
+      <h2 class="b-title">Design Your <em>Tile Pattern</em></h2>
+      <p class="b-sub">Try materials, patterns, colors and grout — or upload your own tile image. Send your design to Nick for a free estimate.</p>
+    </div>
+
+    <!-- DESKTOP 3-COL LAYOUT (shown 900px+) -->
+    <div class="b-builder-desktop" id="desktopBuilder" style="display:none">
+      <!-- LEFT: Desktop controls -->
+      <aside class="b-desktop-left" id="bDesktopLeft">
+        <!-- Upload -->
+        <div class="dc-group">
+          <span class="dc-lbl">📤 Upload Your Tile</span>
+          <div class="dc-upload-wrap">
+            <div class="dc-upload" id="dcUpload" onclick="document.getElementById('dcFileInput').click()">
+              <div class="dc-upreview" id="dcPreview"></div>
+              <div class="dc-ufname" id="dcFname"></div>
+              <div class="dc-uicon">🖼️</div>
+              <div class="dc-utext"><strong>Drop or click</strong><br>JPG, PNG, WEBP</div>
+              <button class="dc-uclear" id="dcClear" onclick="clearCustom(event)">✕</button>
+            </div>
+          </div>
+          <input type="file" id="dcFileInput" accept="image/*" style="display:none">
+          <button class="dc-custom-mat" id="dcCustomMat" data-mat="custom">
+            <div class="dc-cmsw" id="dcCustomSwatch"></div>
+            <div><div class="dc-mn">Your Upload</div><div class="dc-md">Custom texture</div></div>
+          </button>
+        </div>
+        <!-- Material -->
+        <div class="dc-group">
+          <span class="dc-lbl">Material</span>
+          <div class="dc-mat-list" id="dcMatList">
+            <button class="dc-mat-btn active" data-mat="ceramic"><div class="dc-sw" style="background:linear-gradient(135deg,#F2EDE6,#DDD5C8)"></div><div><div class="dc-mn">Ceramic</div><div class="dc-md">Classic wall tile</div></div></button>
+            <button class="dc-mat-btn" data-mat="porcelain"><div class="dc-sw" style="background:linear-gradient(135deg,#EBEBEB,#D0D0D0)"></div><div><div class="dc-mn">Porcelain</div><div class="dc-md">Dense floor tile</div></div></button>
+            <button class="dc-mat-btn" data-mat="marble"><div class="dc-sw" style="background:linear-gradient(135deg,#F0ECE8 40%,#D8D0C4)"></div><div><div class="dc-mn">Marble</div><div class="dc-md">Natural veining</div></div></button>
+            <button class="dc-mat-btn" data-mat="stone"><div class="dc-sw" style="background:linear-gradient(135deg,#B8B0A0,#9A9282)"></div><div><div class="dc-mn">Natural Stone</div><div class="dc-md">Organic texture</div></div></button>
+            <button class="dc-mat-btn" data-mat="glass"><div class="dc-sw" style="background:linear-gradient(135deg,rgba(168,210,200,.9),rgba(100,170,160,.9))"></div><div><div class="dc-mn">Glass Tile</div><div class="dc-md">Light-reflective</div></div></button>
+            <button class="dc-mat-btn" data-mat="mosaic"><div class="dc-sw" style="background:conic-gradient(#E8403A 0 60deg,#E89820 60deg 120deg,#4A90D9 120deg 180deg,#5AB85A 180deg 240deg,#9B59B6 240deg 300deg,#E8C040 300deg)"></div><div><div class="dc-mn">Mosaic</div><div class="dc-md">Artisan mix</div></div></button>
+          </div>
+        </div>
+        <!-- Color -->
+        <div class="dc-group">
+          <span class="dc-lbl">Color</span>
+          <div class="dc-col-grid" id="dcColGrid">
+            <div class="dc-col-sw active" data-color="white" style="background:linear-gradient(145deg,#FAFAF8,#E8E2D8)"><span class="col-lbl">White</span></div>
+            <div class="dc-col-sw" data-color="black" style="background:linear-gradient(145deg,#2A2A2A,#111)"><span class="col-lbl">Black</span></div>
+            <div class="dc-col-sw" data-color="gray" style="background:linear-gradient(145deg,#AAAAAA,#707070)"><span class="col-lbl">Gray</span></div>
+            <div class="dc-col-sw" data-color="beige" style="background:linear-gradient(145deg,#D8C8A8,#B09878)"><span class="col-lbl">Beige</span></div>
+            <div class="dc-col-sw" data-color="blue" style="background:linear-gradient(145deg,#4A7FA0,#2A4560)"><span class="col-lbl">Blue</span></div>
+            <div class="dc-col-sw" data-color="mosaic" style="background:conic-gradient(#E05050 0 60deg,#D49030 60deg 120deg,#4080C8 120deg 180deg,#50A850 180deg 240deg,#9050A8 240deg 300deg,#C8A040 300deg)"><span class="col-lbl">Mosaic</span></div>
+          </div>
+        </div>
+        <!-- Grout -->
+        <div class="dc-group">
+          <span class="dc-lbl">Grout</span>
+          <div class="dc-grout-row" id="dcGroutRow">
+            <button class="dc-grout-btn" data-grout="white"><div class="dc-grout-chip" style="background:#F0EDE8"></div><span class="grout-nm">White</span></button>
+            <button class="dc-grout-btn active" data-grout="gray"><div class="dc-grout-chip" style="background:#8A8680"></div><span class="grout-nm">Gray</span></button>
+            <button class="dc-grout-btn" data-grout="black"><div class="dc-grout-chip" style="background:#1C1C1C"></div><span class="grout-nm">Black</span></button>
+            <button class="dc-grout-btn" data-grout="sand"><div class="dc-grout-chip" style="background:#C2A066"></div><span class="grout-nm">Sand</span></button>
+          </div>
+        </div>
+        <!-- Size -->
+        <div class="dc-group">
+          <span class="dc-lbl">Tile Size</span>
+          <div class="dc-size-list" id="dcSizeList">
+            <button class="dc-size-btn" data-size="2x2"><div class="dc-sz-vis"><div class="sz-ico" style="width:10px;height:10px"></div></div><div><div class="dc-sz-d">2″×2″</div><div class="dc-sz-n">Mosaic</div></div></button>
+            <button class="dc-size-btn" data-size="3x6"><div class="dc-sz-vis"><div class="sz-ico" style="width:18px;height:9px"></div></div><div><div class="dc-sz-d">3″×6″</div><div class="dc-sz-n">Subway</div></div></button>
+            <button class="dc-size-btn active" data-size="6x6"><div class="dc-sz-vis"><div class="sz-ico" style="width:15px;height:15px"></div></div><div><div class="dc-sz-d">6″×6″</div><div class="dc-sz-n">Standard</div></div></button>
+            <button class="dc-size-btn" data-size="12x12"><div class="dc-sz-vis"><div class="sz-ico" style="width:19px;height:19px"></div></div><div><div class="dc-sz-d">12″×12″</div><div class="dc-sz-n">Floor</div></div></button>
+            <button class="dc-size-btn" data-size="24x24"><div class="dc-sz-vis"><div class="sz-ico" style="width:24px;height:19px"></div></div><div><div class="dc-sz-d">24″×24″</div><div class="dc-sz-n">Large Format</div></div></button>
+          </div>
+        </div>
+        <div style="padding:10px 12px;border-top:1px solid var(--cream-dark)">
+          <button class="dc-rand-btn" id="dcRandBtn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg>
+            Randomize Design
+          </button>
+        </div>
+      </aside>
+
+      <!-- CENTER: Canvas -->
+      <div class="b-canvas-col" id="bCanvasCol">
+        <div class="b-canvas-wrap" id="bFrame">
+          <canvas id="tileCanvas" touch-action="none"></canvas>
+          <div class="c-corners"><div class="cc tl"></div><div class="cc tr"></div><div class="cc bl"></div><div class="cc br"></div></div>
+          <div class="drop-overlay" id="dropOverlay"><div class="di">🖼️</div><div class="dt">Drop Your Tile Image</div><div class="ds2">Release to apply as texture</div></div>
+          <div class="tile-tt" id="tileTT"><span class="tt-m" id="ttM">Ceramic</span><span class="tt-sep">·</span><span class="tt-c" id="ttC">White</span><span class="tt-sep">·</span><span class="tt-p" id="ttP">Grid</span><span class="tt-z" id="ttZ">6″×6″</span></div>
+        </div>
+        <div class="b-status" id="bStatus"><span class="bs-d" id="bsDesign"><strong>White Ceramic</strong> · Grid · 6″×6″ · Gray Grout</span><div style="display:flex;align-items:center;gap:12px"><span class="bs-tiles" id="bsTiles" style="font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(245,239,228,.3)">0 tiles</span><span class="bs-live"><span class="ldot"></span>Live</span></div></div>
+      </div>
+
+      <!-- RIGHT: Pattern panel -->
+      <aside class="b-desktop-right" id="bDesktopRight">
+        <div class="dc-pat-list">
+          <div class="dc-lbl" style="padding:0 3px;margin-bottom:10px">Layout Pattern</div>
+          <div class="dc-pat-btns" id="dcPatList">
+            <button class="dc-pat-btn active" data-pat="grid"><div class="dc-pat-prev" id="dp-grid"></div><div><div class="dc-pat-nm">Grid</div><div class="dc-pat-sb">Classic square</div></div></button>
+            <button class="dc-pat-btn" data-pat="brick"><div class="dc-pat-prev" id="dp-brick"></div><div><div class="dc-pat-nm">Brick Offset</div><div class="dc-pat-sb">Running bond</div></div></button>
+            <button class="dc-pat-btn" data-pat="herringbone"><div class="dc-pat-prev" id="dp-herringbone"></div><div><div class="dc-pat-nm">Herringbone</div><div class="dc-pat-sb">Classic zigzag</div></div></button>
+            <button class="dc-pat-btn" data-pat="chevron"><div class="dc-pat-prev" id="dp-chevron"></div><div><div class="dc-pat-nm">Chevron</div><div class="dc-pat-sb">V-shaped rows</div></div></button>
+            <button class="dc-pat-btn" data-pat="vertical"><div class="dc-pat-prev" id="dp-vertical"></div><div><div class="dc-pat-nm">Vertical Stack</div><div class="dc-pat-sb">Column layout</div></div></button>
+            <button class="dc-pat-btn" data-pat="horizontal"><div class="dc-pat-prev" id="dp-horizontal"></div><div><div class="dc-pat-nm">Horizontal</div><div class="dc-pat-sb">Wide format</div></div></button>
+            <button class="dc-pat-btn" data-pat="mosaic"><div class="dc-pat-prev" id="dp-mosaic"></div><div><div class="dc-pat-nm">Mosaic Mix</div><div class="dc-pat-sb">Varied sizes</div></div></button>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- MOBILE CANVAS (always visible) -->
+    <div id="mobileCanvasWrap">
+      <div class="b-canvas-wrap" id="bFrameMob">
+        <canvas id="tileCanvasMob" touch-action="none"></canvas>
+        <div class="c-corners"><div class="cc tl"></div><div class="cc tr"></div><div class="cc bl"></div><div class="cc br"></div></div>
+        <div class="drop-overlay" id="dropOverlayMob"><div class="di">🖼️</div><div class="dt">Drop Tile Image</div><div class="ds2">Release to apply</div></div>
+        <div class="tile-tt" id="tileTTMob"></div>
+      </div>
+      <div class="b-status"><span class="bs-d" id="bsDesignMob"><strong>White Ceramic</strong> · Grid · 6″×6″ · Gray Grout</span><span class="bs-live"><span class="ldot"></span>Live</span></div>
+    </div>
+
+    <!-- MOBILE TAB CONTROLS -->
+    <div class="b-ctrl-tabs" id="bTabs" role="tablist">
+      <button class="b-tab active" data-panel="upload" role="tab">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        Upload
+      </button>
+      <button class="b-tab" data-panel="material" role="tab">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M9 3v18"/></svg>
+        Material
+      </button>
+      <button class="b-tab" data-panel="color" role="tab">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="10.5" r="2.5"/><circle cx="8.5" cy="7.5" r="2.5"/><circle cx="6.5" cy="12.5" r="2.5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 011.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
+        Color
+      </button>
+      <button class="b-tab" data-panel="pattern" role="tab">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/></svg>
+        Pattern
+      </button>
+      <button class="b-tab" data-panel="grout" role="tab">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><line x1="12" y1="5" x2="12" y2="19"/></svg>
+        Grout
+      </button>
+      <button class="b-tab" data-panel="size" role="tab">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 21H3M21 3v18M3 3h18M3 21V3"/></svg>
+        Size
+      </button>
+    </div>
+
+    <!-- MOBILE PANELS -->
+    <div class="b-panels" id="bPanels">
+      <!-- Upload Panel -->
+      <div class="b-panel active" id="panel-upload">
+        <span class="panel-lbl">📤 Upload Your Own Tile Texture</span>
+        <div class="upload-zone-builder" id="mbUploadZone" onclick="document.getElementById('mbFileInput').click()">
+          <div class="uzb-preview" id="mbPreview"></div>
+          <div class="uzb-fname" id="mbFname"></div>
+          <div class="uzb-icon">🖼️</div>
+          <div class="uzb-text"><strong>Tap to upload tile image</strong><br>JPG, PNG, WEBP — your tile photo or inspiration</div>
+          <button class="uzb-clear" id="mbClear" onclick="clearCustomMob(event)">✕</button>
+        </div>
+        <div class="uzb-actions">
+          <button class="uzb-action-btn cam" onclick="document.getElementById('mbCamera').click()">📷 Take Photo</button>
+          <button class="uzb-action-btn gal" onclick="document.getElementById('mbGallery').click()">🖼 Gallery</button>
+        </div>
+        <input type="file" id="mbFileInput" accept="image/*" style="display:none">
+        <input type="file" id="mbCamera" accept="image/*" capture="environment" style="display:none">
+        <input type="file" id="mbGallery" accept="image/*" style="display:none">
+        <button class="custom-mat-btn" id="mbCustomMatBtn" data-mat="custom">
+          <div class="cmsw" id="mbCustomSwatch"></div>
+          <div><strong style="font-size:.8rem">Your Upload</strong> — tap to apply as tile texture</div>
+        </button>
+      </div>
+
+      <!-- Material Panel -->
+      <div class="b-panel" id="panel-material">
+        <span class="panel-lbl">Select Material</span>
+        <div class="mat-scroll" id="mbMatList">
+          <button class="mat-pill active" data-mat="ceramic"><div class="mat-swatch" style="background:linear-gradient(135deg,#F2EDE6,#DDD5C8)"></div>Ceramic</button>
+          <button class="mat-pill" data-mat="porcelain"><div class="mat-swatch" style="background:linear-gradient(135deg,#EBEBEB,#D0D0D0)"></div>Porcelain</button>
+          <button class="mat-pill" data-mat="marble"><div class="mat-swatch" style="background:linear-gradient(135deg,#F0ECE8,#D8D0C4)"></div>Marble</button>
+          <button class="mat-pill" data-mat="stone"><div class="mat-swatch" style="background:linear-gradient(135deg,#B8B0A0,#9A9282)"></div>Natural Stone</button>
+          <button class="mat-pill" data-mat="glass"><div class="mat-swatch" style="background:linear-gradient(135deg,rgba(168,210,200,.9),rgba(100,170,160,.9))"></div>Glass Tile</button>
+          <button class="mat-pill" data-mat="mosaic"><div class="mat-swatch" style="background:conic-gradient(#E8403A 0 60deg,#E89820 60deg 120deg,#4A90D9 120deg 180deg,#5AB85A 180deg 240deg,#9B59B6 240deg 300deg,#E8C040 300deg)"></div>Mosaic</button>
+        </div>
+      </div>
+
+      <!-- Color Panel -->
+      <div class="b-panel" id="panel-color">
+        <span class="panel-lbl">Select Color</span>
+        <div class="color-grid" id="mbColGrid">
+          <div class="col-sw active" data-color="white" style="background:linear-gradient(145deg,#FAFAF8,#E8E2D8)"><span class="col-lbl">White</span></div>
+          <div class="col-sw" data-color="black" style="background:linear-gradient(145deg,#2A2A2A,#111)"><span class="col-lbl">Black</span></div>
+          <div class="col-sw" data-color="gray" style="background:linear-gradient(145deg,#AAAAAA,#707070)"><span class="col-lbl">Gray</span></div>
+          <div class="col-sw" data-color="beige" style="background:linear-gradient(145deg,#D8C8A8,#B09878)"><span class="col-lbl">Beige</span></div>
+          <div class="col-sw" data-color="blue" style="background:linear-gradient(145deg,#4A7FA0,#2A4560)"><span class="col-lbl">Blue</span></div>
+          <div class="col-sw" data-color="mosaic" style="background:conic-gradient(#E05050 0 60deg,#D49030 60deg 120deg,#4080C8 120deg 180deg,#50A850 180deg 240deg,#9050A8 240deg 300deg,#C8A040 300deg)"><span class="col-lbl">Mosaic</span></div>
+        </div>
+      </div>
+
+      <!-- Pattern Panel -->
+      <div class="b-panel" id="panel-pattern">
+        <span class="panel-lbl">Select Layout Pattern</span>
+        <div class="pat-grid-mb" id="mbPatList">
+          <button class="pat-btn-mb active" data-pat="grid"><div class="pat-prev-sm" id="mp-grid"></div><div><div class="pat-nm">Grid</div><div class="pat-sb2">Classic square</div></div></button>
+          <button class="pat-btn-mb" data-pat="brick"><div class="pat-prev-sm" id="mp-brick"></div><div><div class="pat-nm">Brick Offset</div><div class="pat-sb2">Running bond</div></div></button>
+          <button class="pat-btn-mb" data-pat="herringbone"><div class="pat-prev-sm" id="mp-herringbone"></div><div><div class="pat-nm">Herringbone</div><div class="pat-sb2">Classic zigzag</div></div></button>
+          <button class="pat-btn-mb" data-pat="chevron"><div class="pat-prev-sm" id="mp-chevron"></div><div><div class="pat-nm">Chevron</div><div class="pat-sb2">V-shape rows</div></div></button>
+          <button class="pat-btn-mb" data-pat="vertical"><div class="pat-prev-sm" id="mp-vertical"></div><div><div class="pat-nm">Vertical Stack</div><div class="pat-sb2">Columns</div></div></button>
+          <button class="pat-btn-mb" data-pat="horizontal"><div class="pat-prev-sm" id="mp-horizontal"></div><div><div class="pat-nm">Horizontal</div><div class="pat-sb2">Wide format</div></div></button>
+          <button class="pat-btn-mb" data-pat="mosaic"><div class="pat-prev-sm" id="mp-mosaic"></div><div><div class="pat-nm">Mosaic Mix</div><div class="pat-sb2">Varied sizes</div></div></button>
+        </div>
+      </div>
+
+      <!-- Grout Panel -->
+      <div class="b-panel" id="panel-grout">
+        <span class="panel-lbl">Select Grout Color</span>
+        <div class="grout-grid" id="mbGroutRow">
+          <button class="grout-btn" data-grout="white"><div class="grout-chip" style="background:#F0EDE8"></div><span class="grout-nm">White</span></button>
+          <button class="grout-btn active" data-grout="gray"><div class="grout-chip" style="background:#8A8680"></div><span class="grout-nm">Gray</span></button>
+          <button class="grout-btn" data-grout="black"><div class="grout-chip" style="background:#1C1C1C"></div><span class="grout-nm">Black</span></button>
+          <button class="grout-btn" data-grout="sand"><div class="grout-chip" style="background:#C2A066"></div><span class="grout-nm">Sand</span></button>
+        </div>
+      </div>
+
+      <!-- Size Panel -->
+      <div class="b-panel" id="panel-size">
+        <span class="panel-lbl">Select Tile Size</span>
+        <div class="size-grid" id="mbSizeList">
+          <button class="size-btn" data-size="2x2"><div class="sz-ico" style="width:12px;height:12px;display:block;margin:0 auto 5px"></div><div class="sz-d">2″×2″</div><div class="sz-n">Mosaic</div></button>
+          <button class="size-btn" data-size="3x6"><div class="sz-ico" style="width:20px;height:10px;display:block;margin:0 auto 5px"></div><div class="sz-d">3″×6″</div><div class="sz-n">Subway</div></button>
+          <button class="size-btn active" data-size="6x6"><div class="sz-ico" style="width:18px;height:18px;display:block;margin:0 auto 5px"></div><div class="sz-d">6″×6″</div><div class="sz-n">Standard</div></button>
+          <button class="size-btn" data-size="12x12"><div class="sz-ico" style="width:22px;height:22px;display:block;margin:0 auto 5px"></div><div class="sz-d">12″×12″</div><div class="sz-n">Floor</div></button>
+          <button class="size-btn" data-size="24x24"><div class="sz-ico" style="width:28px;height:22px;display:block;margin:0 auto 5px"></div><div class="sz-d">24″×24″</div><div class="sz-n">Large</div></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MOBILE ACTION ROW -->
+    <div class="b-actions">
+      <button class="btn-rand2" id="mbRandBtn">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg>
+        Randomize
+      </button>
+      <button class="btn-send2" id="mbSendBtn">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
+        Send to Nick
+      </button>
+    </div>
+
+    <!-- Mobile CTA strip -->
+    <div class="b-cta-strip">
+      <p class="b-cta-quote">"Experiment with tile layouts just like a professional installer would plan your space."</p>
+      <p class="b-cta-note">Free consultation · Written estimates · Brooklyn, Queens, Manhattan & Long Island</p>
+      <div class="b-cta-btns">
+        <button class="btn btn-clay b-cta-send" id="bCtaSend">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
+          Send Design to Nick
+        </button>
+        <a href="tel:+19178658693" class="btn btn-outline-w">📞 917-865-8693</a>
+      </div>
+    </div>
+
+    <!-- Desktop CTA row (shown 900px+) -->
+    <div class="b-desktop-cta">
+      <div class="bdc-l">
+        <p class="bdc-cap">"Experiment with tile layouts just like a professional installer would."</p>
+        <p class="bdc-note">Free consultation · Written estimates · Brooklyn, Queens, Manhattan & Long Island</p>
+      </div>
+      <div class="bdc-r">
+        <button class="bdc-send" id="dcSendBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
+          Send This Design to Nick
+        </button>
+        <a href="tel:+19178658693" class="bdc-ph">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l1.27-.85a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          917-865-8693
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SERVICE AREA
+═══════════════════════════════════════════════ -->
+<section id="service-area">
+  <div class="wrap">
+    <div class="area-layout">
+      <div>
+        <div class="sec-lbl reveal">Where We Work</div>
+        <h2 class="sec-title reveal r1">Serving All of <em>New York City</em></h2>
+        <div class="boro-grid reveal r2">
+          <div class="boro-card"><div class="boro-nm">Brooklyn</div><div class="boro-nt">Where it all began</div></div>
+          <div class="boro-card"><div class="boro-nm">Queens</div><div class="boro-nt">Nick's home base</div></div>
+          <div class="boro-card"><div class="boro-nm">Manhattan</div><div class="boro-nt">Full island coverage</div></div>
+          <div class="boro-card"><div class="boro-nm">Long Island</div><div class="boro-nt">Nassau & select Suffolk</div></div>
+        </div>
+      </div>
+      <div class="reveal r2">
+        <div class="area-cta-box">
+          <p>🚐 <strong>We come to you.</strong> Nick will visit your home, assess the project, and provide a written estimate — at no charge.</p>
+          <a href="tel:+19178658693" class="area-big-phone">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="22" height="22"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l1.27-.85a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            (917) 865-8693
+          </a>
+          <a href="sms:+19178658693" class="area-sms">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            Text Nick a Photo of Your Tile Problem
+          </a>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <a href="#contact" class="btn btn-clay" style="flex:1">Free Estimate</a>
+          <a href="mailto:info@nickthetileman.com" class="btn btn-outline" style="flex:1">Email Nick</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     REVIEWS
+═══════════════════════════════════════════════ -->
+<section id="reviews">
+  <div class="wrap rev-hdr">
+    <div class="sec-lbl story-lbl reveal">What Customers Say</div>
+    <h2 class="sec-title rev-t reveal r1">Real <em>Reviews</em> from Real New Yorkers</h2>
+  </div>
+  <div class="rev-scroll-wrap">
+    <div class="rev-track" id="revTrack">
+      <div class="rev-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"My husband and I were very pleased with the work Nick and Jeremiah did on our stall shower. They were neat and easy to work with. Would highly recommend!"</p><div class="rev-auth">Janet I.</div><div class="rev-loc">Whitestone, NY</div><div class="rev-tag">Shower Installation</div></div>
+      <div class="rev-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"Nick and his team did an excellent job replacing my second floor leaking shower. Very professional. Now the shower looks beautiful. Nick, the best tile man!"</p><div class="rev-auth">Margaret S.</div><div class="rev-loc">Whitestone, NY</div><div class="rev-tag">Shower Leak Repair</div></div>
+      <div class="rev-card"><div class="rev-stars">★★★★½</div><p class="rev-text">"Nick and his team did a great job tiling my kitchen backsplash. Work came out just how I wanted. They were neat and cleaned up when done. Highly recommend!"</p><div class="rev-auth">Dave M.</div><div class="rev-loc">East Meadow, Long Island</div><div class="rev-tag">Kitchen Backsplash</div></div>
+      <div class="rev-card"><div class="rev-stars">★★★★½</div><p class="rev-text">"Nick's two-man team started Monday and finished Thursday. Fast, clean, precise. A gorgeous new tiled floor. I highly recommend this business."</p><div class="rev-auth">Enid N.</div><div class="rev-loc">Jackson Heights, NY</div><div class="rev-tag">Floor Tile</div></div>
+      <div class="rev-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"Nick re-grouted my entire bathroom and the difference is unbelievable — looks brand new. Fair price, explained everything. A true craftsman."</p><div class="rev-auth">Linda T.</div><div class="rev-loc">Bay Ridge, Brooklyn</div><div class="rev-tag">Re-Grouting</div></div>
+      <div class="rev-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"Emergency shower leak — Nick walked me through what to do over the phone. Arrived next day, spot-on diagnosis, clean professional repair."</p><div class="rev-auth">Robert K.</div><div class="rev-loc">Forest Hills, Queens</div><div class="rev-tag">Emergency Repair</div></div>
+      <!-- Duplicate for infinite scroll on desktop -->
+      <div class="rev-card" aria-hidden="true"><div class="rev-stars">★★★★★</div><p class="rev-text">"My husband and I were very pleased with the work Nick and Jeremiah did on our stall shower. They were neat and easy to work with. Would highly recommend!"</p><div class="rev-auth">Janet I.</div><div class="rev-loc">Whitestone, NY</div><div class="rev-tag">Shower Installation</div></div>
+      <div class="rev-card" aria-hidden="true"><div class="rev-stars">★★★★★</div><p class="rev-text">"Nick and his team did an excellent job replacing my second floor leaking shower. Very professional. Nick, the best tile man!"</p><div class="rev-auth">Margaret S.</div><div class="rev-loc">Whitestone, NY</div><div class="rev-tag">Shower Leak Repair</div></div>
+      <div class="rev-card" aria-hidden="true"><div class="rev-stars">★★★★½</div><p class="rev-text">"Nick and his team did a great job tiling my kitchen backsplash. Work came out just how I wanted. They were neat and cleaned up. Highly recommend!"</p><div class="rev-auth">Dave M.</div><div class="rev-loc">East Meadow, Long Island</div><div class="rev-tag">Kitchen Backsplash</div></div>
+      <div class="rev-card" aria-hidden="true"><div class="rev-stars">★★★★★</div><p class="rev-text">"Nick re-grouted my entire bathroom and the difference is unbelievable. Fair price, explained everything. A true craftsman."</p><div class="rev-auth">Linda T.</div><div class="rev-loc">Bay Ridge, Brooklyn</div><div class="rev-tag">Re-Grouting</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     TEAM
+═══════════════════════════════════════════════ -->
+<section id="team">
+  <div class="wrap">
+    <div class="sec-lbl reveal">The Craftsmen</div>
+    <h2 class="sec-title reveal r1">Meet Our <em>Team</em></h2>
+    <p class="sec-intro reveal r2">Three generations of expertise united by passion for tile craftsmanship.</p>
+    <div class="team-scroll" id="teamScroll">
+      <div class="team-card"><img class="team-photo" src="https://nickthetileman.com/wp-content/uploads/2024/04/1603187111grandpa1.jpg" alt="Nick Sr. - Founder" loading="lazy" width="200" height="240"><div class="team-inf"><div class="team-nm">Nick Sr.</div><div class="team-rl">Founder · 2nd Gen</div><div class="team-gn">Began tiling at 16. Original Nathan's Famous, NYC subway stations, 63 years working.</div></div></div>
+      <div class="team-card"><img class="team-photo" src="https://nickthetileman.com/wp-content/uploads/2024/03/1603193197bathroom149ave-003-1.jpg" alt="Nick Jr. - CEO" loading="lazy" width="200" height="240"><div class="team-inf"><div class="team-nm">Nick Jr.</div><div class="team-rl">CEO · 3rd Gen</div><div class="team-gn">Raised in Brooklyn, Queens-based. Old-world craftsmanship meets modern techniques.</div></div></div>
+      <div class="team-card"><img class="team-photo" src="https://nickthetileman.com/wp-content/uploads/2024/04/IMG_0921.jpg" alt="Manuel - Specialist" loading="lazy" width="200" height="240"><div class="team-inf"><div class="team-nm">Manuel</div><div class="team-rl">Senior Tile Specialist</div><div class="team-gn">Years of precision floor and wall tile installation across NYC.</div></div></div>
+      <div class="team-card"><img class="team-photo" src="https://nickthetileman.com/wp-content/uploads/2024/04/IMG_1132-1.jpg" alt="Joseph - Specialist" loading="lazy" width="200" height="240"><div class="team-inf"><div class="team-nm">Joseph</div><div class="team-rl">Project Lead · 4th Gen</div><div class="team-gn">Nick's grandson. Oversees on-site work with professionalism and quality control.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     FAQ
+═══════════════════════════════════════════════ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="faq-layout">
+      <div class="faq-sticky">
+        <div class="sec-lbl reveal">Got Questions?</div>
+        <h2 class="sec-title reveal r1" style="color:var(--slate)">Tile <em>FAQs</em></h2>
+        <p style="font-size:.95rem;color:var(--slate-l);line-height:1.65;margin-bottom:20px" class="reveal r2">Nick has answered hundreds of customer questions about tile repair, shower leaks, and proper installation.</p>
+        <div style="background:var(--slate);border-radius:var(--r);padding:var(--sp-md)" class="reveal r3">
+          <p style="font-size:.88rem;color:rgba(245,239,228,.6);margin-bottom:14px;line-height:1.55">Have a question? Call Nick directly — he answers personally.</p>
+          <a href="tel:+19178658693" class="btn btn-clay btn-full">📞 917-865-8693</a>
+        </div>
+      </div>
+      <div class="faq-list reveal r1">
+        <div class="faq-item open"><div class="faq-q"><span>What is a "Plopper" — and why avoid one?</span><div class="faq-qi">+</div></div><div class="faq-a">A Plopper is an <strong>inexperienced worker</strong> who doesn't properly install floor tiles. They scoop bundles of thin-set, lay the tile on top, and bang it down. After you pay, the grout pops out, tiles crack, and become loose. <strong>Call Nick at 917-865-8693</strong> immediately before it gets worse.</div></div>
+        <div class="faq-item"><div class="faq-q"><span>I have a leak from the bathtub going downstairs. What do I do first?</span><div class="faq-qi">+</div></div><div class="faq-a">Cut open a large garbage bag and tape it inside the bathtub lip with painter's tape, covering the shower walls. This temporarily stops water from leaking downstairs. Then <strong>call Nick at 917-865-8693</strong> to assess and provide the correct solution.</div></div>
+        <div class="faq-item"><div class="faq-q"><span>How can I test if my shower pan is leaking?</span><div class="faq-qi">+</div></div><div class="faq-a">Tape the drain with plastic. Pour 2–3 buckets of water onto the shower floor — about 1 inch above the drain. Let it stand. If water appears downstairs, you have a pan leak. <strong>In most cases we can repair the pan</strong> without a full renovation.</div></div>
+        <div class="faq-item"><div class="faq-q"><span>How long does a proper tile installation last?</span><div class="faq-qi">+</div></div><div class="faq-a">Done correctly, a tile installation lasts <strong>decades — or longer</strong>. Nick's father's tile at the original Nathan's Famous lasted over 80 years. Poor work may fail within months. Our goal: do it right the first time, so it lasts a lifetime.</div></div>
+        <div class="faq-item"><div class="faq-q"><span>Do you offer free estimates?</span><div class="faq-qi">+</div></div><div class="faq-a">Yes — <strong>absolutely free</strong>. Nick will come to your home, assess the full scope, and provide a written estimate outlining exactly what will be done. No surprises, no hidden fees. Serving Brooklyn, Queens, Manhattan, and parts of Long Island.</div></div>
+        <div class="faq-item"><div class="faq-q"><span>Are you licensed and insured?</span><div class="faq-qi">+</div></div><div class="faq-a">Yes. <strong>Fully insured</strong> with Liability, Disability, and Workers Compensation — for your complete protection. Always ask any contractor for this before letting them into your home.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     CONTACT
+═══════════════════════════════════════════════ -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-layout">
+      <div>
+        <div class="contact-hdr">
+          <h2 class="contact-hdr-title">Let's Transform Your Space.</h2>
+          <p class="contact-hdr-sub">Ready to stop looking at that run-down bathroom? Call, text, or fill out the form. We serve Brooklyn, Queens, Manhattan, and Long Island — free consultation every time.</p>
+        </div>
+        <!-- Quick contact buttons (mobile-first prominent) -->
+        <div class="contact-quick" style="position:relative;z-index:1">
+          <a href="tel:+19178658693" class="cq-btn cq-call">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l1.27-.85a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            Call Nick Now
+          </a>
+          <a href="sms:+19178658693" class="cq-btn cq-sms">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            Send a Text
+          </a>
+        </div>
+        <div style="position:relative;z-index:1;padding:18px 22px;background:rgba(255,255,255,.12);border-radius:var(--r);border:1px solid rgba(255,255,255,.2);margin-bottom:var(--sp-md)">
+          <p style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-style:italic;color:rgba(255,255,255,.85);line-height:1.58">"Don't delay — do this today. Call Nick the Tile Man and we will change your bathroom to look like a work of art."</p>
+          <p style="font-size:.72rem;color:rgba(255,255,255,.42);margin-top:8px;letter-spacing:.1em;text-transform:uppercase">— Nick Jr., CEO</p>
+        </div>
+      </div>
+      <div class="contact-form" style="position:relative;z-index:1">
+        <h3>Request a Free Estimate</h3>
+        <div class="fg"><label>Your Name <span>*</span></label>
+          <input type="text" placeholder="First and last name" autocomplete="name" autocapitalize="words" enterkeyhint="next">
+        </div>
+        <div class="fg"><label>Phone Number <span>*</span></label>
+          <input type="tel" placeholder="(917) 000-0000" autocomplete="tel" inputmode="tel" enterkeyhint="next">
+        </div>
+        <div class="fg"><label>Email</label>
+          <input type="email" placeholder="you@example.com" autocomplete="email" inputmode="email" enterkeyhint="next">
+        </div>
+        <div class="fg"><label>Borough / Area <span>*</span></label>
+          <select autocomplete="address-level2">
+            <option value="">Select your area...</option>
+            <option>Brooklyn</option><option>Queens</option><option>Manhattan</option>
+            <option>Nassau County</option><option>Suffolk County</option>
+          </select>
+        </div>
+        <div class="fg"><label>Service Needed</label>
+          <select><option value="">Select type...</option>
+            <option>Bathroom Tile Installation</option><option>Kitchen Backsplash</option>
+            <option>Tile Repair</option><option>Re-Grouting & Caulk</option>
+            <option>Shower Leak Repair</option><option>Natural Stone / Marble</option>
+          </select>
+        </div>
+        <div class="fg"><label>Describe Your Project</label>
+          <textarea placeholder="Room size, current condition, timeline..." rows="3" enterkeyhint="done"></textarea>
+        </div>
+        <!-- Photo upload with camera option -->
+        <div class="form-upload">
+          <p>📷 <strong>Upload Photos</strong> of your space (optional)</p>
+          <div class="fu-btns">
+            <button class="fu-btn fu-cam" type="button" onclick="document.getElementById('fcCamera').click()">📷 Camera</button>
+            <button class="fu-btn fu-lib" type="button" onclick="document.getElementById('fcLibrary').click()">🖼 Library</button>
+          </div>
+          <input type="file" id="fcCamera" accept="image/*" capture="environment" multiple style="display:none">
+          <input type="file" id="fcLibrary" accept="image/*" multiple style="display:none">
+        </div>
+        <button class="form-submit" onclick="handleContactSubmit(this)">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
+          Send My Free Estimate Request
+        </button>
+        <p class="form-legal">We typically respond within 24 hours. Or call <a href="tel:+19178658693">(917) 865-8693</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════ -->
+<footer>
+  <div class="wrap">
+    <!-- Mobile: brand + 2-col grid -->
+    <div class="ft-brand">
+      <div class="ft-logo-row">
+        <div class="nav-logo-tiles" style="width:28px;height:28px"><span></span><span></span><span></span><span></span></div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:1.05rem;letter-spacing:.08em;color:var(--cream)">Nick the Tile Man</div>
+      </div>
+      <p>Third-generation NYC tile installation specialists. Brooklyn craftsmanship since the 1940s.</p>
+      <p style="margin-top:9px"><strong style="color:var(--gold)">Fully insured</strong> — Liability · Disability · Workers Comp</p>
+    </div>
+    <!-- Mobile grid -->
+    <div class="ft-grid">
+      <div class="ft-col"><h4>Services</h4><ul>
+        <li><a href="#services">Bathroom Tiles</a></li>
+        <li><a href="#services">Kitchen Backsplash</a></li>
+        <li><a href="#services">Tile Repair</a></li>
+        <li><a href="#services">Re-Grouting</a></li>
+        <li><a href="#services">Shower Repairs</a></li>
+      </ul></div>
+      <div class="ft-col"><h4>Contact</h4><ul>
+        <li><a href="tel:+19178658693">📞 (917) 865-8693</a></li>
+        <li><a href="sms:+19178658693">💬 Text Nick</a></li>
+        <li><a href="mailto:info@nickthetileman.com">✉ Email Nick</a></li>
+        <li><a href="#design-studio">🧱 Design Studio</a></li>
+        <li><a href="#story">📖 Our Story</a></li>
+      </ul></div>
+    </div>
+    <!-- Desktop grid (shown via ft-top at 900px+) -->
+    <div class="ft-top" style="display:none" id="ftTopDesktop">
+      <div class="ft-brand" style="margin-bottom:0">
+        <div class="ft-logo-row"><div class="nav-logo-tiles" style="width:28px;height:28px"><span></span><span></span><span></span><span></span></div><div style="font-family:'Bebas Neue',sans-serif;font-size:1.05rem;letter-spacing:.08em;color:var(--cream)">Nick the Tile Man</div></div>
+        <p>Third-generation NYC tile installation specialists. Brooklyn craftsmanship since the 1940s.</p>
+        <p style="margin-top:9px"><strong style="color:var(--gold)">Fully insured.</strong> <span style="color:rgba(245,239,228,.36)">Liability · Disability · Workers Comp</span></p>
+      </div>
+      <div class="ft-col"><h4>Services</h4><ul><li><a href="#services">Bathroom Tile Installation</a></li><li><a href="#services">Kitchen Backsplash</a></li><li><a href="#services">All Tile Repairs</a></li><li><a href="#services">Re-Grouting & Caulk</a></li><li><a href="#services">Shower Leak Repair</a></li></ul></div>
+      <div class="ft-col"><h4>Company</h4><ul><li><a href="#story">Our Story</a></li><li><a href="#team">Meet the Team</a></li><li><a href="#portfolio">Gallery</a></li><li><a href="#design-studio">Design Studio</a></li><li><a href="#faq">FAQs</a></li></ul></div>
+      <div class="ft-col"><h4>Contact</h4><ul><li><a href="tel:+19178658693">📞 (917) 865-8693</a></li><li><a href="sms:+19178658693">💬 Text Nick</a></li><li><a href="mailto:info@nickthetileman.com">✉ Email</a></li><li><a href="#service-area">📍 Brooklyn, Queens, Manhattan</a></li></ul></div>
+    </div>
+    <div class="ft-bottom">
+      <div class="ft-copy">© 2025 Nick the Tile Man · nickthetileman.com</div>
+      <div class="ft-leg"><a href="#">Privacy</a><a href="#">Terms</a></div>
+    </div>
+  </div>
+  <div class="ft-safety"></div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════
+     JAVASCRIPT
+═══════════════════════════════════════════════ -->
+<script>
+'use strict';
+
+/* ─── UTILITY ─── */
+const $=s=>document.getElementById(s);
+const $$=s=>document.querySelectorAll(s);
+function lcg(seed){let s=(seed>>>0)||1;return()=>{s=Math.imul(s,1664525)+1013904223>>>0;return s/4294967296}}
+
+/* ─── NAV ─── */
+const burger=$('navBurger'),mobileNav=$('mobileNav');
+let navOpen=false;
+burger.addEventListener('click',()=>{
+  navOpen=!navOpen;
+  burger.classList.toggle('open',navOpen);
+  mobileNav.classList.toggle('open',navOpen);
+  burger.setAttribute('aria-expanded',navOpen);
+  document.body.style.overflow=navOpen?'hidden':'';
+});
+$$('[data-close-nav]').forEach(el=>el.addEventListener('click',()=>{
+  navOpen=false;burger.classList.remove('open');mobileNav.classList.remove('open');
+  burger.setAttribute('aria-expanded','false');document.body.style.overflow='';
+}));
+window.addEventListener('scroll',()=>{
+  document.getElementById('mainNav').classList.toggle('scrolled',scrollY>40);
+},{ passive:true });
+
+/* ─── SMOOTH SCROLL ─── */
+$$('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}
+  });
+});
+
+/* ─── REVEAL ─── */
+const ro=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.08,rootMargin:'0px 0px -30px 0px'});
+$$('.reveal').forEach(el=>ro.observe(el));
+
+/* ─── COUNTERS ─── */
+function animCount(el){const t=parseInt(el.dataset.count);let c=0;const step=t/(1600/16);const tm=setInterval(()=>{c=Math.min(c+step,t);el.textContent=Math.floor(c);if(c>=t)clearInterval(tm)},16)}
+const co=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting&&!e.target.dataset.done){e.target.dataset.done='1';animCount(e.target)}}),{threshold:.5});
+$$('[data-count]').forEach(el=>co.observe(el));
+
+/* ─── PORTFOLIO FILTER ─── */
+$$('.fil-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    $$('.fil-btn').forEach(b=>{b.classList.remove('active');b.setAttribute('aria-selected','false')});
+    btn.classList.add('active');btn.setAttribute('aria-selected','true');
+    const f=btn.dataset.f;
+    $$('.g-item').forEach(item=>{
+      const show=f==='all'||item.dataset.cat.includes(f);
+      item.style.opacity=show?'1':'0.2';
+      item.style.pointerEvents=show?'':'none';
+    });
+  });
+});
+
+/* ─── GALLERY TAP/CLICK ─── */
+const lbEl=$('lb'),lbImg=$('lbImg'),lbCap=$('lbCap');
+let lbImgs=[],lbIdx=0;
+$$('.g-item').forEach((item,i)=>{
+  const img=item.querySelector('img');
+  lbImgs.push({src:img.src,alt:img.alt,cap:item.dataset.cap||''});
+  item.addEventListener('click',()=>openLb(i));
+});
+function openLb(i){lbIdx=i;lbImg.src=lbImgs[i].src;lbImg.alt=lbImgs[i].alt;lbCap.textContent=lbImgs[i].cap;lbEl.classList.add('open');document.body.style.overflow='hidden'}
+function closeLb(){lbEl.classList.remove('open');document.body.style.overflow=''}
+$('lbClose').addEventListener('click',closeLb);
+lbEl.addEventListener('click',e=>{if(e.target===lbEl)closeLb()});
+$('lbPrev').addEventListener('click',()=>openLb((lbIdx-1+lbImgs.length)%lbImgs.length));
+$('lbNext').addEventListener('click',()=>openLb((lbIdx+1)%lbImgs.length));
+document.addEventListener('keydown',e=>{if(!lbEl.classList.contains('open'))return;if(e.key==='Escape')closeLb();if(e.key==='ArrowLeft')$('lbPrev').click();if(e.key==='ArrowRight')$('lbNext').click()});
+// Swipe on lightbox
+let lbTX=0;
+lbEl.addEventListener('touchstart',e=>{lbTX=e.touches[0].clientX},{passive:true});
+lbEl.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-lbTX;if(Math.abs(dx)>50){dx<0?$('lbNext').click():$('lbPrev').click()}else if(Math.abs(dx)<5)closeLb()});
+
+/* ─── FAQ ─── */
+$$('.faq-q').forEach(q=>{
+  q.addEventListener('click',()=>{const item=q.parentElement;const was=item.classList.contains('open');$$('.faq-item').forEach(i=>i.classList.remove('open'));if(!was)item.classList.add('open')});
+});
+
+/* ─── CONTACT FORM ─── */
+function handleContactSubmit(btn){
+  btn.textContent='✓ Sent! Nick will be in touch soon.';
+  btn.style.background='var(--gold)';btn.style.color='var(--slate)';btn.disabled=true;
+}
+
+/* ═══════════════════════════════════════════════
+   TILE BUILDER ENGINE
+═══════════════════════════════════════════════ */
+const GROUT_COLS={white:'#F0EDE8',gray:'#8A8680',black:'#1C1C1C',sand:'#C2A066'};
+const TILE_COLS={
+  white:{base:'#EEE8E0',light:'#FAF8F4',dark:'#D0C8BC',name:'White Subway'},
+  black:{base:'#1E1E1E',light:'#2E2E2E',dark:'#0A0A0A',name:'Black Matte'},
+  gray:{base:'#8C8C8C',light:'#ACACAC',dark:'#6A6A6A',name:'Gray Stone'},
+  beige:{base:'#C8B490',light:'#DCC8A0',dark:'#A89070',name:'Beige Travertine'},
+  blue:{base:'#3A5F78',light:'#4E7A96',dark:'#284558',name:'Blue Decorative'},
+  mosaic:{base:null,name:'Patterned Mosaic'}
+};
+const MOSAIC_PAL=['#D44040','#D47820','#3878C8','#44A044','#8844B8','#C89830','#C05828','#206888','#B04040','#5888D0'];
+const MAT_N={ceramic:'Ceramic',porcelain:'Porcelain',marble:'Marble',stone:'Natural Stone',glass:'Glass Tile',mosaic:'Mosaic',custom:'Custom Upload'};
+const PAT_N={grid:'Grid',brick:'Brick Offset',herringbone:'Herringbone',chevron:'Chevron',vertical:'Vertical Stack',horizontal:'Horizontal',mosaic:'Mosaic Mix'};
+const SZ_CFG={'2x2':{px:20,w:1,h:1,label:'2″×2″'},'3x6':{px:16,w:2,h:1,label:'3″×6″'},'6x6':{px:44,w:1,h:1,label:'6″×6″'},'12x12':{px:62,w:1,h:1,label:'12″×12″'},'24x24':{px:84,w:1,h:1,label:'24″×24″'}};
+
+const BS={material:'ceramic',color:'white',pattern:'grid',size:'6x6',grout:'gray'};
+let customImg=null,texCache={};
+
+// Detect desktop
+const isDesktop=()=>window.innerWidth>=900;
+
+// Active canvases
+let activeCanvas=null,activeCtx=null,activeCW=0,activeCH=0;
+let tiles=[],hovIdx=null,animReq=null,animStart=null;
+const ANIM_DUR=480;
+
+function getCanvas(){
+  if(isDesktop()){
+    const c=$('tileCanvas');if(c)return{c,fr:$('bFrame')};
+  }
+  return{c:$('tileCanvasMob'),fr:$('bFrameMob')};
+}
+
+function resizeCanvas(){
+  const{c,fr}=getCanvas();if(!c||!fr)return;
+  const r=fr.getBoundingClientRect();
+  const CW=Math.floor(r.width),CH=Math.floor(r.height);
+  const dpr=Math.min(window.devicePixelRatio||1,2);
+  c.width=CW*dpr;c.height=CH*dpr;
+  c.style.width=CW+'px';c.style.height=CH+'px';
+  const ctx2=c.getContext('2d');ctx2.setTransform(dpr,0,0,dpr,0,0);
+  activeCanvas=c;activeCtx=ctx2;activeCW=CW;activeCH=CH;
+  texCache={};
+}
+
+/* Tile generation */
+function genTiles(){
+  tiles=[];const sc=SZ_CFG[BS.size];const G=3,bH=sc.px,bW=sc.w===sc.h?bH:bH*(sc.w/sc.h);
+  switch(BS.pattern){
+    case'grid':genGrid(bW,bH,G);break;case'brick':genBrick(bW,bH,G);break;
+    case'herringbone':genHerring(bW,bH,G);break;case'chevron':genChev(bW,bH,G);break;
+    case'vertical':genVert(bW,bH,G);break;case'horizontal':genHoriz(bW,bH,G);break;
+    case'mosaic':genMos(bW,bH,G);break;
+  }
+  tiles.forEach((t,i)=>{if(t.seed===undefined)t.seed=i*17+3});
+  const tEl=$('bsTiles');if(tEl)tEl.textContent=tiles.length+' tiles';
+}
+function addT(x,y,w,h,ex){tiles.push({x,y,w,h,seed:tiles.length*19+7,...ex})}
+function genGrid(tW,tH,G){for(let y=G;y<activeCH+tH;y+=tH+G)for(let x=G;x<activeCW+tW;x+=tW+G)addT(x,y,tW,tH)}
+function genBrick(tW,tH,G){let row=0;for(let y=G;y<activeCH+tH;y+=tH+G,row++){const off=row%2?(tW+G)/2:0;for(let x=G-off;x<activeCW+tW;x+=tW+G)addT(x,y,tW,tH)}}
+function genHerring(tW,tH,G){const HW=Math.max(tW,tH*2),HH=Math.round(HW/2),uW=HW+HH+G,uH=HW+G;for(let row=-1;row*uH<activeCH+uH*2;row++){const off=row%2?HH+G:0;for(let col=-1;col*uW-off<activeCW+uW;col++){const ux=col*uW-off,uy=row*uH;addT(ux,uy,HW,HH);addT(ux+HW+G,uy,HH,HW)}}}
+function genChev(tW,tH,G){const HW=Math.max(tW,tH*2),HH=Math.round(HW/2),sX=HW+G,sY=HH+G;const mid=Math.floor(activeCW/(sX*2));for(let row=-1;row*sY<activeCH+HW*2;row++)for(let col=-mid-2;col<=mid+2;col++){const xO=col*sX,yO=Math.abs(col)*(sY*0.4);addT(activeCW/2+xO-HW/2,row*sY+yO,HW,HH)}}
+function genVert(tW,tH,G){const VW=Math.min(tW,tH),VH=Math.max(tW,tH)*(tW===tH?1.8:1);for(let x=G;x<activeCW+VW;x+=VW+G)for(let y=G;y<activeCH+VH;y+=VH+G)addT(x,y,VW,VH)}
+function genHoriz(tW,tH,G){const LW=Math.max(tW,tH)*(tW===tH?2.2:1),LH=Math.min(tW,tH);for(let y=G;y<activeCH+LH;y+=LH+G)for(let x=G;x<activeCW+LW;x+=LW+G)addT(x,y,LW,LH)}
+function genMos(tW,tH,G){const sm=Math.max(12,Math.round(tH*.55)),md=sm*2+G,u=md+G;let mc=0;for(let uy=G;uy<activeCH+u;uy+=u+G)for(let ux=G;ux<activeCW+u;ux+=u+G){addT(ux,uy,md,md,{mi:mc++%MOSAIC_PAL.length});addT(ux+md+G,uy,sm,sm,{mi:mc++%MOSAIC_PAL.length});addT(ux+md+sm+G*2,uy,sm,sm,{mi:mc++%MOSAIC_PAL.length});addT(ux+md+G,uy+sm+G,sm,sm,{mi:mc++%MOSAIC_PAL.length});addT(ux+md+sm+G*2,uy+sm+G,sm,sm,{mi:mc++%MOSAIC_PAL.length});addT(ux,uy+md+G,md+sm*2+G*2,sm,{mi:mc++%MOSAIC_PAL.length})}}
+
+/* Texture */
+function buildTex(w,h,seed){
+  const iw=Math.max(1,Math.ceil(w)),ih=Math.max(1,Math.ceil(h));
+  const tc=document.createElement('canvas');tc.width=iw;tc.height=ih;
+  const tx=tc.getContext('2d');const rng=lcg(seed);const col=TILE_COLS[BS.color];const mat=BS.material;
+  if(mat==='custom'&&customImg){
+    tx.drawImage(customImg,0,0,iw,ih);
+    const sh=tx.createLinearGradient(0,0,0,ih);sh.addColorStop(0,'rgba(255,255,255,.18)');sh.addColorStop(.3,'rgba(255,255,255,0)');sh.addColorStop(1,'rgba(0,0,0,.15)');tx.fillStyle=sh;tx.fillRect(0,0,iw,ih);
+  }else if(BS.color==='mosaic'||mat==='mosaic'){drawMosSub(tx,0,0,iw,ih,seed)}
+  else{
+    const g=tx.createLinearGradient(0,0,iw,ih);g.addColorStop(0,col.light);g.addColorStop(.45,col.base);g.addColorStop(1,col.dark);tx.fillStyle=g;tx.fillRect(0,0,iw,ih);
+    if(mat==='marble')drawMarble(tx,iw,ih,col,rng);
+    else if(mat==='stone')drawStone(tx,iw,ih,rng);
+    else if(mat==='glass'){const g2=tx.createLinearGradient(0,0,iw*.55,ih*.55);g2.addColorStop(0,'rgba(255,255,255,.5)');g2.addColorStop(.4,'rgba(255,255,255,.15)');g2.addColorStop(1,'rgba(255,255,255,0)');tx.fillStyle=g2;tx.fillRect(0,0,iw,ih)}
+    else if(mat==='porcelain'){const rg=tx.createRadialGradient(iw*.3,ih*.2,0,iw*.5,ih*.5,Math.max(iw,ih));rg.addColorStop(0,'rgba(255,255,255,.18)');rg.addColorStop(1,'rgba(0,0,0,.04)');tx.fillStyle=rg;tx.fillRect(0,0,iw,ih)}
+  }
+  const s1=tx.createLinearGradient(0,0,0,ih);s1.addColorStop(0,'rgba(255,255,255,.13)');s1.addColorStop(.25,'rgba(255,255,255,0)');s1.addColorStop(.75,'rgba(0,0,0,0)');s1.addColorStop(1,'rgba(0,0,0,.12)');tx.fillStyle=s1;tx.fillRect(0,0,iw,ih);
+  return tc;
+}
+function drawMarble(tx,w,h,col,rng){tx.save();tx.globalAlpha=.5;const vc=col===TILE_COLS.black?'rgba(90,85,75,.8)':col===TILE_COLS.blue?'rgba(180,210,240,.5)':'rgba(140,130,110,.65)';for(let v=0;v<4;v++){const x0=rng()*w,x1=rng()*w;tx.beginPath();tx.moveTo(x0,0);tx.bezierCurveTo(x0+(rng()-.5)*w*.6,h*.3,x1+(rng()-.5)*w*.5,h*.65,x1,h);tx.strokeStyle=vc;tx.lineWidth=.4+rng()*.8;tx.stroke()}tx.restore()}
+function drawStone(tx,w,h,rng){const d=Math.floor(w*h*.025);tx.save();for(let i=0;i<d;i++){const px=rng()*w,py=rng()*h,r=.4+rng()*1.2;tx.beginPath();tx.arc(px,py,r,0,Math.PI*2);tx.fillStyle=rng()>.5?'rgba(255,255,255,.16)':'rgba(0,0,0,.12)';tx.fill()}tx.restore()}
+function drawMosSub(tx,x,y,w,h,seed){const rng=lcg(seed+1000);const sub=Math.max(3,Math.min(10,Math.floor(Math.min(w,h)/3))),sg=1;let ci=Math.floor(rng()*MOSAIC_PAL.length);for(let sy=y;sy<y+h;sy+=sub+sg){for(let sx=x;sx<x+w;sx+=sub+sg){tx.fillStyle=MOSAIC_PAL[ci%MOSAIC_PAL.length];tx.fillRect(sx,sy,sub,sub);ci=(ci+Math.floor(rng()*3+1))%MOSAIC_PAL.length}ci=(ci+2)%MOSAIC_PAL.length}const g=tx.createLinearGradient(x,y,x+w*.55,y+h*.55);g.addColorStop(0,'rgba(255,255,255,.22)');g.addColorStop(1,'rgba(255,255,255,0)');tx.fillStyle=g;tx.fillRect(x,y,w,h)}
+
+/* Render */
+function render(anim){texCache={};genTiles();if(anim){animStart=null;if(animReq)cancelAnimationFrame(animReq);animReq=requestAnimationFrame(animFrame)}else drawFrame(1)}
+function animFrame(ts){if(!animStart)animStart=ts;const p=Math.min((ts-animStart)/ANIM_DUR,1);drawFrame(p);if(p<1)animReq=requestAnimationFrame(animFrame);else animReq=null}
+function drawFrame(p){
+  if(!activeCtx)return;
+  activeCtx.clearRect(0,0,activeCW,activeCH);
+  activeCtx.fillStyle=GROUT_COLS[BS.grout];activeCtx.fillRect(0,0,activeCW,activeCH);
+  activeCtx.save();activeCtx.beginPath();activeCtx.rect(0,0,activeCW,activeCH);activeCtx.clip();
+  const total=tiles.length;
+  tiles.forEach((tile,idx)=>{
+    const delay=Math.min(idx/Math.max(total,1),.6);
+    const tp=p<1?Math.max(0,Math.min((p-delay*.6)/(1-delay*.45),1)):1;
+    const ease=tp<1?1-Math.pow(1-tp,2.8):1;
+    activeCtx.save();
+    if(p<1&&ease<1){activeCtx.globalAlpha=ease;const cx=tile.x+tile.w/2,cy=tile.y+tile.h/2;activeCtx.translate(cx,cy);activeCtx.scale(.4+ease*.6,.4+ease*.6);activeCtx.translate(-cx,-cy)}
+    drawTile(tile,idx===hovIdx);
+    activeCtx.restore();
+  });
+  activeCtx.restore();
+}
+function drawTile(tile,hov){
+  const{x,y,w,h,seed,mi}=tile;if(w<1||h<1)return;
+  const ck=`${BS.material}-${BS.color}-${Math.round(w)}-${Math.round(h)}`;
+  if(!texCache[ck])texCache[ck]=buildTex(w,h,seed||0);
+  activeCtx.save();activeCtx.beginPath();activeCtx.rect(x,y,w,h);activeCtx.clip();
+  if((BS.color==='mosaic'||BS.material==='mosaic')&&mi!==undefined){const lk=`${ck}-mi${mi}`;if(!texCache[lk])texCache[lk]=buildTex(w,h,mi*31+7);activeCtx.drawImage(texCache[lk],x,y,w,h)}
+  else{activeCtx.drawImage(texCache[ck],x,y,w,h);const v=((seed*7)%20-10)/100;if(Math.abs(v)>.01){activeCtx.fillStyle=v>0?`rgba(255,255,255,${v*.65})`:`rgba(0,0,0,${-v*.5})`;activeCtx.fillRect(x,y,w,h)}}
+  if(hov){activeCtx.fillStyle='rgba(255,255,255,.2)';activeCtx.fillRect(x,y,w,h);activeCtx.strokeStyle='rgba(201,168,76,.9)';activeCtx.lineWidth=2;activeCtx.strokeRect(x+1,y+1,w-2,h-2)}
+  activeCtx.restore();
+}
+
+/* Mouse/touch on canvas */
+function handleCanvasPointer(ex,ey,fromCanvas){
+  let found=null;
+  for(let i=tiles.length-1;i>=0;i--){const t=tiles[i];if(ex>=t.x&&ex<=t.x+t.w&&ey>=t.y&&ey<=t.y+t.h){found=i;break}}
+  if(found!==hovIdx){hovIdx=found;if(!animReq)drawFrame(1)}
+}
+
+function bindCanvasEvents(c){
+  if(!c)return;
+  c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect();handleCanvasPointer(e.clientX-r.left,e.clientY-r.top);updateTT(e.clientX-r.left,e.clientY-r.top)},{passive:true});
+  c.addEventListener('mouseleave',()=>{hovIdx=null;hideTT();if(!animReq)drawFrame(1)});
+  // Touch: tap to highlight
+  let tapTimeout;
+  c.addEventListener('touchstart',e=>{const t=e.touches[0];const r=c.getBoundingClientRect();handleCanvasPointer(t.clientX-r.left,t.clientY-r.top);clearTimeout(tapTimeout);tapTimeout=setTimeout(()=>{hovIdx=null;hideTT();if(!animReq)drawFrame(1)},1400)},{passive:true});
+}
+function updateTT(cx,cy){
+  const tt=$('tileTT')||(isDesktop()?$('tileTT'):$('tileTTMob'));
+  if(!tt||hovIdx===null){hideTT();return}
+  const mn=document.getElementById('ttM');const mc=document.getElementById('ttC');const mp=document.getElementById('ttP');const mz=document.getElementById('ttZ');
+  if(mn)mn.textContent=MAT_N[BS.material];if(mc)mc.textContent=TILE_COLS[BS.color]?.name||'Mosaic';if(mp)mp.textContent=PAT_N[BS.pattern];if(mz)mz.textContent=SZ_CFG[BS.size].label;
+  const tw=tt.offsetWidth||220,th2=tt.offsetHeight||34;
+  let tx=cx+12,ty=cy-th2-10;
+  if(tx+tw>activeCW-8)tx=cx-tw-12;if(ty<5)ty=cy+14;
+  tt.style.left=tx+'px';tt.style.top=ty+'px';
+  tt.classList.add('show');
+}
+function hideTT(){$$('.tile-tt').forEach(t=>t.classList.remove('show'))}
+
+/* Status update */
+function updateStatus(){
+  const c=TILE_COLS[BS.color];const m=MAT_N[BS.material];const p=PAT_N[BS.pattern];const s=SZ_CFG[BS.size].label;const g=BS.grout.charAt(0).toUpperCase()+BS.grout.slice(1);
+  const txt=`<strong>${c?.name||'Mosaic'} ${m}</strong> · ${p} · ${s} · ${g} Grout`;
+  const el=$('bsDesign');if(el)el.innerHTML=txt;
+  const el2=$('bsDesignMob');if(el2)el2.innerHTML=txt;
+}
+
+/* ─── MOBILE TABS ─── */
+$$('.b-tab').forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    $$('.b-tab').forEach(t=>t.classList.remove('active'));tab.classList.add('active');
+    const panelId='panel-'+tab.dataset.panel;
+    $$('.b-panel').forEach(p=>p.classList.remove('active'));
+    const panel=$(panelId);if(panel)panel.classList.add('active');
+  });
+});
+
+/* ─── CONTROL BINDING (works for both mobile & desktop selectors) ─── */
+function bindCtrl(containerId,attr,stateKey,anim){
+  const container=document.getElementById(containerId);if(!container)return;
+  container.addEventListener('click',e=>{
+    const btn=e.target.closest(`[data-${attr}]`);if(!btn)return;
+    document.querySelectorAll(`#${containerId} [data-${attr}]`).forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    BS[stateKey]=btn.dataset[attr];
+    // Sync paired control
+    syncPairs(attr,BS[stateKey]);
+    if(stateKey==='material')deactivateCustom();
+    texCache={};updateStatus();if(anim)render(true);else{if(!animReq)drawFrame(1)}
+  });
+}
+function syncPairs(attr,val){
+  // Sync mobile ↔ desktop controls
+  const pairs={
+    'mat':['mbMatList','dcMatList'],
+    'color':['mbColGrid','dcColGrid'],
+    'grout':['mbGroutRow','dcGroutRow'],
+    'size':['mbSizeList','dcSizeList'],
+    'pat':['mbPatList','dcPatList','patList']
+  };
+  const lists=pairs[attr]||[];
+  lists.forEach(id=>{
+    const el=document.getElementById(id);if(!el)return;
+    el.querySelectorAll(`[data-${attr}]`).forEach(b=>b.classList.toggle('active',b.dataset[attr]===val));
+  });
+}
+
+// Bind all controls
+bindCtrl('mbMatList','mat','material',true);
+bindCtrl('mbColGrid','color','color',true);
+bindCtrl('mbGroutRow','grout','grout',false);
+bindCtrl('mbSizeList','size','size',true);
+bindCtrl('mbPatList','pat','pattern',true);
+bindCtrl('dcMatList','mat','material',true);
+bindCtrl('dcColGrid','color','color',true);
+bindCtrl('dcGroutRow','grout','grout',false);
+bindCtrl('dcSizeList','size','size',true);
+bindCtrl('dcPatList','pat','pattern',true);
+// Also desktop pattern sidebar
+bindCtrl('patList','pat','pattern',true);
+
+/* ─── GROUT: immediate redraw ─── */
+['mbGroutRow','dcGroutRow'].forEach(id=>{
+  const el=document.getElementById(id);if(!el)return;
+  el.addEventListener('click',()=>setTimeout(()=>drawFrame(1),0));
+});
+
+/* ─── CUSTOM TILE UPLOAD ─── */
+function loadCustom(file){
+  const reader=new FileReader();
+  reader.onload=ev=>{
+    const img=new Image();img.onload=()=>{
+      customImg=img;
+      // Update mobile zone
+      const mz=$('mbUploadZone');if(mz){mz.classList.add('has-file');$('mbPreview').style.backgroundImage=`url(${ev.target.result})`;$('mbFname').textContent=file.name.length>22?file.name.slice(0,20)+'…':file.name}
+      // Update desktop zone
+      const dz=$('dcUpload');if(dz){dz.classList.add('has-file');$('dcPreview').style.backgroundImage=`url(${ev.target.result})`;$('dcFname').textContent=file.name.length>22?file.name.slice(0,20)+'…':file.name}
+      // Swatches
+      const s1=$('mbCustomSwatch');if(s1)s1.style.backgroundImage=`url(${ev.target.result})`;
+      const s2=$('dcCustomSwatch');if(s2)s2.style.backgroundImage=`url(${ev.target.result})`;
+      // Show custom mat btn
+      const cb=$('mbCustomMatBtn');if(cb)cb.classList.add('visible');
+      const cd=$('dcCustomMat');if(cd)cd.classList.add('visible');
+      activateMat('custom');
+    };img.src=ev.target.result;
+  };reader.readAsDataURL(file);
+}
+function activateMat(m){
+  BS.material=m;syncPairs('mat',m);
+  const cb=$('mbCustomMatBtn');if(cb)cb.classList.toggle('active',m==='custom');
+  const cd=$('dcCustomMat');if(cd)cd.classList.toggle('active',m==='custom');
+  texCache={};updateStatus();render(true);
+}
+function deactivateCustom(){const cb=$('mbCustomMatBtn');if(cb)cb.classList.remove('active');const cd=$('dcCustomMat');if(cd)cd.classList.remove('active')}
+function clearCustomMob(e){e.stopPropagation();customImg=null;const z=$('mbUploadZone');if(z){z.classList.remove('has-file');$('mbPreview').style.backgroundImage='';$('mbFname').textContent=''}const cb=$('mbCustomMatBtn');if(cb)cb.classList.remove('visible','active');if(BS.material==='custom')activateMat('ceramic')}
+function clearCustom(e){e.stopPropagation();customImg=null;const z=$('dcUpload');if(z){z.classList.remove('has-file');$('dcPreview').style.backgroundImage='';$('dcFname').textContent=''}const cd=$('dcCustomMat');if(cd)cd.classList.remove('visible','active');if(BS.material==='custom')activateMat('ceramic')}
+
+// File inputs
+['mbFileInput','mbCamera','mbGallery'].forEach(id=>{const el=$(id);if(el)el.addEventListener('change',e=>{const f=e.target.files[0];if(f)loadCustom(f);e.target.value=''})});
+['dcFileInput'].forEach(id=>{const el=$(id);if(el)el.addEventListener('change',e=>{const f=e.target.files[0];if(f)loadCustom(f);e.target.value=''})});
+// Custom mat buttons
+const cb=$('mbCustomMatBtn');if(cb)cb.addEventListener('click',()=>{if(customImg)activateMat('custom')});
+const cd=$('dcCustomMat');if(cd)cd.addEventListener('click',()=>{if(customImg)activateMat('custom')});
+
+// Drag onto canvases
+['bFrame','bFrameMob'].forEach(fid=>{
+  const fr=$(fid);if(!fr)return;
+  const ov=fr.querySelector('.drop-overlay');
+  fr.addEventListener('dragover',e=>{e.preventDefault();if(ov)ov.classList.add('show')});
+  fr.addEventListener('dragleave',e=>{if(!fr.contains(e.relatedTarget)&&ov)ov.classList.remove('show')});
+  fr.addEventListener('drop',e=>{e.preventDefault();if(ov)ov.classList.remove('show');const f=e.dataTransfer.files[0];if(f&&f.type.startsWith('image/'))loadCustom(f)});
+});
+
+/* ─── RANDOMIZE ─── */
+const MATS=['ceramic','porcelain','marble','stone','glass','mosaic'];
+const COLS=['white','black','gray','beige','blue','mosaic'];
+const PATS=['grid','brick','herringbone','chevron','vertical','horizontal','mosaic'];
+const SIZES=['2x2','3x6','6x6','12x12','24x24'];
+const GRTS=['white','gray','black','sand'];
+const pick=arr=>arr[Math.floor(Math.random()*arr.length)];
+
+function doRandomize(){
+  BS.material=pick(MATS);BS.color=pick(COLS);BS.pattern=pick(PATS);BS.size=pick(SIZES);BS.grout=pick(GRTS);
+  syncPairs('mat',BS.material);syncPairs('color',BS.color);syncPairs('pat',BS.pattern);syncPairs('size',BS.size);syncPairs('grout',BS.grout);
+  deactivateCustom();texCache={};updateStatus();render(true);
+}
+[$('mbRandBtn'),$('dcRandBtn')].forEach(btn=>{if(btn)btn.addEventListener('click',doRandomize)});
+
+/* ─── PATTERN MINI PREVIEWS ─── */
+function drawPreviews(){
+  const pats=['grid','brick','herringbone','chevron','vertical','horizontal','mosaic'];
+  const W=36,H=26,gc='#7A7570',tc='#E0D8CC',ta='#C8BFB0',g=1.5;
+  pats.forEach(pat=>{
+    // Draw in both mobile (mp-*) and desktop (dp-*)
+    ['mp-'+pat,'dp-'+pat].forEach(pid=>{
+      const el=$(pid);if(!el)return;
+      let c=el.querySelector('canvas');if(!c){c=document.createElement('canvas');el.appendChild(c)}
+      c.width=W;c.height=H;c.style.width=W+'px';c.style.height=H+'px';
+      const pc=c.getContext('2d');pc.fillStyle=gc;pc.fillRect(0,0,W,H);
+      switch(pat){
+        case'grid':{const tw=9,th=9;for(let y=g;y<H;y+=th+g)for(let x=g;x<W;x+=tw+g){pc.fillStyle=tc;pc.fillRect(x,y,tw,th)}break}
+        case'brick':{const tw=11,th=6;let row=0;for(let y=g;y<H;y+=th+g,row++){const off=row%2?(tw+g)/2:0;for(let x=g-off;x<W;x+=tw+g){pc.fillStyle=row%3?tc:ta;pc.fillRect(x,y,tw,th)}}break}
+        case'herringbone':{const hw=11,hh=5,hg=1.5,uW=hw+hh+hg;for(let row=-1;row*(hw+hg)<H+hw;row++){const off=row%2?hh+hg:0;for(let col=-1;col*uW-off<W+uW;col++){const ux=col*uW-off,uy=row*(hw+hg);pc.fillStyle=tc;pc.fillRect(ux,uy,hw,hh);pc.fillStyle=ta;pc.fillRect(ux+hw+hg,uy,hh,hw)}}break}
+        case'chevron':{const tw=10,th=5;for(let row=-1;row*(th+g)<H+th*3;row++){const y=row*(th+g);for(let col=-2;col*(tw+g)<W+tw*2;col++){const off=Math.abs(col)*(th+g)*.38;pc.fillStyle=(row+col)%2?tc:ta;pc.fillRect(col*(tw+g)+g,y+off,tw,th)}}break}
+        case'vertical':{const tw=5,th=13;for(let x=g;x<W;x+=tw+g)for(let y=g;y<H;y+=th+g){pc.fillStyle=tc;pc.fillRect(x,y,tw,th)}break}
+        case'horizontal':{const tw=15,th=5;for(let y=g;y<H;y+=th+g)for(let x=g;x<W;x+=tw+g){pc.fillStyle=tc;pc.fillRect(x,y,tw,th)}break}
+        case'mosaic':{const sm=4,md=sm*2+g;const mc=['#C04040','#3868B8','#388038','#887020'];let ci=0;for(let uy=g;uy<H;uy+=md+g+g)for(let ux=g;ux<W;ux+=md+g+g){pc.fillStyle=mc[ci++%4];pc.fillRect(ux,uy,md,md);pc.fillStyle=mc[ci++%4];pc.fillRect(ux+md+g,uy,sm,sm);pc.fillStyle=mc[ci++%4];pc.fillRect(ux+md+sm+g*2,uy,sm,sm)}break}
+      }
+    });
+  });
+}
+
+/* ─── MODAL ─── */
+function openModal(){
+  const m=$('estimateModal');m.classList.add('open');document.body.style.overflow='hidden';
+  buildSnap();updateBadges();
+}
+function closeModal(){$('estimateModal').classList.remove('open');document.body.style.overflow=''}
+[$('mbSendBtn'),$('bCtaSend'),$('dcSendBtn')].forEach(btn=>{if(btn)btn.addEventListener('click',openModal)});
+$('modalClose').addEventListener('click',closeModal);
+$('estimateModal').addEventListener('click',e=>{if(e.target===$('estimateModal'))closeModal()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('estimateModal').classList.contains('open'))closeModal()});
+// Swipe down to close modal on mobile
+let modalTY=0;
+$('estimateModal').addEventListener('touchstart',e=>{modalTY=e.touches[0].clientY},{passive:true});
+$('estimateModal').addEventListener('touchend',e=>{if(e.changedTouches[0].clientY-modalTY>60)closeModal()},{passive:true});
+
+function buildSnap(){
+  const sc=$('snapCanvas');if(!sc)return;
+  sc.width=96;sc.height=72;const sctx=sc.getContext('2d');
+  sctx.fillStyle=GROUT_COLS[BS.grout];sctx.fillRect(0,0,96,72);
+  sctx.save();sctx.beginPath();sctx.rect(0,0,96,72);sctx.clip();
+  const col=TILE_COLS[BS.color];
+  tiles.slice(0,200).forEach((tile,idx)=>{
+    const tx2=tile.x*96/activeCW,ty2=tile.y*72/activeCH,tw2=tile.w*96/activeCW,th2=tile.h*72/activeCH;
+    if(tw2<.5||th2<.5)return;
+    if(BS.material==='custom'&&customImg){sctx.drawImage(customImg,tx2,ty2,tw2,th2)}
+    else if((BS.color==='mosaic'||BS.material==='mosaic')&&tile.mi!==undefined){sctx.fillStyle=MOSAIC_PAL[tile.mi%MOSAIC_PAL.length];sctx.fillRect(tx2,ty2,tw2,th2)}
+    else{sctx.fillStyle=col?.base||MOSAIC_PAL[idx%MOSAIC_PAL.length];sctx.fillRect(tx2,ty2,tw2,th2)}
+  });
+  sctx.restore();
+}
+function updateBadges(){
+  $('bMat').textContent=MAT_N[BS.material];
+  $('bCol').textContent=TILE_COLS[BS.color]?.name||'Mosaic Mix';
+  $('bPat').textContent=PAT_N[BS.pattern]+' Pattern';
+  $('bSz').textContent=SZ_CFG[BS.size].label;
+}
+$('modalSub').addEventListener('click',()=>{
+  if(!$('fName').value.trim()){$('fName').focus();return}
+  if(!$('fPhone').value.trim()){$('fPhone').focus();return}
+  $('formArea').style.display='none';$('successState').style.display='block';
+});
+
+/* ─── RESPONSIVE LAYOUT SWITCH ─── */
+function applyLayout(){
+  const desk=isDesktop();
+  const desktopBuilder=$('desktopBuilder');
+  const mobileWrap=$('mobileCanvasWrap');
+  const bTabs=$('bTabs');
+  const bPanels=$('bPanels');
+  const bActions=document.querySelector('.b-actions');
+  const bCtaStrip=document.querySelector('.b-cta-strip');
+  const ftTop=$('ftTopDesktop');
+  const ftGrid=document.querySelector('.ft-grid');
+  const ftBrand=document.querySelector('.ft-brand');
+
+  if(desk){
+    if(desktopBuilder)desktopBuilder.style.display='grid';
+    if(mobileWrap)mobileWrap.style.display='none';
+    if(bTabs)bTabs.style.display='none';
+    if(bPanels)bPanels.style.display='none';
+    if(bActions)bActions.style.display='none';
+    if(bCtaStrip)bCtaStrip.style.display='none';
+    if(ftTop){ftTop.style.display='grid';if(ftGrid)ftGrid.style.display='none';if(ftBrand)ftBrand.style.display='none'}
+    // Show desktop controls
+    const dl=$('bDesktopLeft'),dr=$('bDesktopRight');
+    if(dl)dl.style.display='block';if(dr)dr.style.display='block';
+  } else {
+    if(desktopBuilder)desktopBuilder.style.display='none';
+    if(mobileWrap)mobileWrap.style.display='block';
+    if(bTabs)bTabs.style.display='flex';
+    if(bPanels)bPanels.style.display='block';
+    if(bActions)bActions.style.display='grid';
+    if(bCtaStrip)bCtaStrip.style.display='block';
+    if(ftTop){ftTop.style.display='none';if(ftGrid)ftGrid.style.display='grid';if(ftBrand)ftBrand.style.display='block'}
+  }
+}
+
+/* ─── INIT ─── */
+let resizeTO;
+function onResize(){
+  clearTimeout(resizeTO);resizeTO=setTimeout(()=>{
+    applyLayout();
+    resizeCanvas();
+    const{c}=getCanvas();
+    bindCanvasEvents(c);
+    texCache={};genTiles();drawFrame(1);
+  },200);
+}
+window.addEventListener('resize',onResize,{passive:true});
+
+function init(){
+  applyLayout();
+  resizeCanvas();
+  const{c}=getCanvas();
+  bindCanvasEvents(c);
+  genTiles();texCache={};updateStatus();
+  drawPreviews();
+  render(true);
+}
+
+// Init after paint
+requestAnimationFrame(()=>setTimeout(init,80));
+</script>
+</body>
+</html>
