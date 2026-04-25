@@ -8,8 +8,8 @@
 Brooklyn · Queens · Manhattan · Nassau · Suffolk
 
 [![Live Site](https://img.shields.io/badge/live-nickthetileman.vercel.app-C9A84C?style=for-the-badge)](https://nickthetileman.vercel.app)
-[![Call Nick](https://img.shields.io/badge/call-917--865--8693-2C2E33?style=for-the-badge)](tel:+19178658693)
 [![Est. 1944](https://img.shields.io/badge/est.-1944-9A5A40?style=for-the-badge)](#)
+[![NYC](https://img.shields.io/badge/NYC-Brooklyn%20·%20Queens%20·%20Long%20Island-2C2E33?style=for-the-badge)](#)
 
 </div>
 
@@ -75,8 +75,8 @@ Upload the directory. `vercel.json` is Vercel-specific and harmless elsewhere.
 ## Contact
 
 **Nick** — third-generation tile installer
-📞 [917-865-8693](tel:+19178658693)
 🌐 [nickthetileman.vercel.app](https://nickthetileman.vercel.app)
+✉ [tygworldwide@gmail.com](mailto:tygworldwide@gmail.com)
 
 ---
 

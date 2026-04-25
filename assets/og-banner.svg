@@ -59,24 +59,22 @@
   <line x1="120" y1="200" x2="240" y2="200" stroke="#C9A84C" stroke-width="2"/>
 
   <!-- HERO HEADLINE -->
-  <text x="120" y="290" fill="#2C2E33" font-family="Georgia,'Times New Roman',serif" font-size="78" font-weight="400" letter-spacing="-1.5">Three Generations</text>
-  <text x="120" y="370" fill="#9A5A40" font-family="Georgia,'Times New Roman',serif" font-size="78" font-weight="400" font-style="italic" letter-spacing="-1.5">of New York Tile.</text>
+  <text x="120" y="270" fill="#2C2E33" font-family="Georgia,'Times New Roman',serif" font-size="78" font-weight="400" letter-spacing="-1.5">Three Generations</text>
+  <text x="120" y="350" fill="#9A5A40" font-family="Georgia,'Times New Roman',serif" font-size="78" font-weight="400" font-style="italic" letter-spacing="-1.5">of New York Tile.</text>
 
   <!-- subtitle -->
-  <text x="120" y="425" fill="#454850" font-family="Georgia,'Times New Roman',serif" font-size="20" font-style="italic">Bathrooms · Kitchens · Mosaic · Restoration</text>
+  <text x="120" y="400" fill="#454850" font-family="Georgia,'Times New Roman',serif" font-size="20" font-style="italic">Bathrooms · Kitchens · Mosaic · Restoration</text>
 
   <!-- service area band -->
-  <text x="120" y="478" fill="#6E695F" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="12.5" letter-spacing="3.5" font-weight="700">BROOKLYN · QUEENS · MANHATTAN · NASSAU · SUFFOLK</text>
+  <text x="120" y="442" fill="#6E695F" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="12.5" letter-spacing="3.5" font-weight="700">BROOKLYN · QUEENS · MANHATTAN · NASSAU · SUFFOLK</text>
 
-  <!-- CTA pill (phone) -->
-  <g transform="translate(120,510)">
-    <rect width="280" height="54" rx="4" fill="#2C2E33"/>
+  <!-- bottom badge row -->
+  <g transform="translate(120,475)">
+    <rect width="360" height="54" rx="4" fill="#2C2E33"/>
     <rect x="0" y="0" width="4" height="54" fill="#C9A84C"/>
-    <text x="22" y="34" fill="#C9A84C" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="22" font-weight="700" letter-spacing="2">917-865-8693</text>
-    <text x="22" y="49" fill="#9B9589" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="9" letter-spacing="3" font-weight="600">CALL NICK · FREE ESTIMATES</text>
+    <text x="22" y="24" fill="#C9A84C" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="13" letter-spacing="3" font-weight="700">FREE ESTIMATES</text>
+    <text x="22" y="44" fill="#F5EFE4" font-family="Georgia,'Times New Roman',serif" font-style="italic" font-size="15">Licensed · Insured · Family-Owned</text>
   </g>
-  <text x="425" y="538" fill="#454850" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="11.5" letter-spacing="2.5" font-weight="700">LICENSED · INSURED · FAMILY-OWNED</text>
-  <text x="425" y="558" fill="#6E695F" font-family="Georgia,serif" font-style="italic" font-size="13">nickthetileman.com</text>
 
   <!-- DECORATIVE TILE COMPOSITION (right) -->
   <g transform="translate(770,140)" filter="url(#tileShadow)">
@@ -111,8 +109,5 @@
   </g>
 
   <!-- corner mark bottom-right -->
-  <text x="1170" y="600" text-anchor="end" fill="#9B9589" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="10" letter-spacing="3" font-weight="600">NYC · BK · QNS · L.I.</text>
-
-  <!-- bottom thin slate rule -->
-  <rect x="72" y="620" width="1128" height="6" fill="#2C2E33"/>
+  <text x="1170" y="555" text-anchor="end" fill="#9B9589" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="10" letter-spacing="3" font-weight="600">NYC · BROOKLYN · QUEENS · LONG ISLAND</text>
 </svg>
