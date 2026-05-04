@@ -140,6 +140,69 @@ img,video,svg{max-width:100%}
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:var(--r)}
 a:focus,button:focus{outline:none}
 a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+/* === mobile polish + animation safety net === */
+/* if animations never fire (reduced-motion, headless, slow JS) the
+   hero text would stay at opacity:0 — force a visible final state */
+.hero-content{opacity:1!important;transform:none!important;animation:none!important}
+.ht{opacity:1!important;animation:none!important}
+
+/* small-phone sticky CTA — drop brand, let buttons share row evenly */
+@media(max-width:480px){
+  .sticky-cta{padding:0 8px;gap:6px;justify-content:stretch}
+  .sticky-cta-brand{display:none}
+  .sc-call,.sc-est{flex:1;height:38px;padding:0 10px;font-size:.74rem;letter-spacing:.04em;gap:5px;min-width:0}
+  .sc-call svg,.sc-est svg{width:13px;height:13px}
+}
+
+/* hero — tighter on small phones so headline + CTAs fit one viewport */
+@media(max-width:480px){
+  #hero{min-height:auto;padding:48px 0 56px}
+  .hero-content{padding:20px 18px}
+  .hero-eye{font-size:.62rem;letter-spacing:.18em;margin-bottom:14px}
+  .hero-eye::before,.hero-eye::after{width:18px}
+  .hero-title{font-size:clamp(3.4rem,16vw,6rem);margin-bottom:8px}
+  .hero-sub{font-size:1.05rem;margin-bottom:14px;padding:0 6px}
+  .hero-desc{font-size:.92rem;line-height:1.6;margin-bottom:24px;padding:0 4px}
+  .hero-btns{gap:8px;max-width:100%}
+  .hero-stats{position:static;margin-top:32px;padding:0 16px}
+  .hero-stats-inner{flex-wrap:wrap}
+}
+
+/* generic mobile touch + spacing safety */
+@media(max-width:600px){
+  .btn,a.btn{min-height:48px}
+  section{scroll-margin-top:120px}
+  h2{word-break:break-word;hyphens:auto}
+}
+
+/* === cookie consent — themed === */
+#cookieBar{position:fixed;left:50%;bottom:18px;transform:translateX(-50%) translateY(calc(100% + 40px));z-index:2500;width:min(720px,calc(100% - 24px));background:var(--white);color:var(--slate);border:1px solid rgba(155,149,137,.35);border-left:4px solid var(--gold);border-radius:var(--r);box-shadow:0 18px 60px rgba(26,28,33,.22),0 4px 14px rgba(26,28,33,.08);padding:18px 22px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;font-family:'DM Sans',sans-serif;transition:transform .55s cubic-bezier(.22,1,.36,1),opacity .35s ease;opacity:0;pointer-events:none;will-change:transform}
+#cookieBar.show{transform:translateX(-50%) translateY(0);opacity:1;pointer-events:auto}
+#cookieBar .ck-mark{flex-shrink:0;width:42px;height:42px;border-radius:var(--r);background:var(--cream-dark);display:grid;place-items:center;color:var(--clay-d);overflow:hidden;position:relative}
+#cookieBar .ck-mark svg{width:22px;height:22px}
+#cookieBar .ck-mark::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 48%,rgba(201,168,76,.3) 50%,transparent 52%);pointer-events:none}
+#cookieBar .ck-body{flex:1;min-width:200px;line-height:1.45}
+#cookieBar .ck-eye{font-family:'Bebas Neue',sans-serif;font-size:.72rem;letter-spacing:.22em;color:var(--clay-d);margin-bottom:3px;text-transform:uppercase}
+#cookieBar .ck-msg{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--slate);font-style:italic}
+#cookieBar .ck-msg a{color:var(--clay-d);text-decoration:underline;text-decoration-color:rgba(154,90,64,.4);text-underline-offset:3px}
+#cookieBar .ck-msg a:hover{text-decoration-color:var(--clay-d)}
+#cookieBar .ck-btns{display:flex;gap:8px;flex-shrink:0}
+#cookieBar .ck-btn{height:42px;padding:0 18px;border-radius:var(--r);font-family:'Bebas Neue',sans-serif;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;border:none;cursor:pointer;transition:background .2s,color .2s,transform .1s;-webkit-tap-highlight-color:transparent;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+#cookieBar .ck-accept{background:var(--slate);color:var(--gold)}
+#cookieBar .ck-accept:hover{background:var(--slate-m)}
+#cookieBar .ck-accept:active{transform:scale(.97)}
+#cookieBar .ck-decline{background:transparent;color:var(--grout-d);border:1px solid rgba(155,149,137,.5)}
+#cookieBar .ck-decline:hover{background:var(--cream);color:var(--slate)}
+@media(max-width:560px){
+  #cookieBar{bottom:12px;padding:14px 16px;gap:12px;border-radius:var(--r)}
+  #cookieBar .ck-mark{width:36px;height:36px}
+  #cookieBar .ck-mark svg{width:18px;height:18px}
+  #cookieBar .ck-msg{font-size:.95rem}
+  #cookieBar .ck-eye{font-size:.65rem}
+  #cookieBar .ck-btns{width:100%;justify-content:flex-end}
+  #cookieBar .ck-btn{height:40px;padding:0 14px;font-size:.78rem}
+}
 </style>
 </head>
 <body>
@@ -1458,6 +1521,40 @@ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded'
     <p class="letter-sign">— Nick the Tile Man<small>Originally from Brooklyn · Now in Queens</small></p>
   </article>
 </div>
+
+<aside id="cookieBar" role="dialog" aria-live="polite" aria-label="Cookie notice" hidden>
+  <div class="ck-mark" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5z"/><circle cx="8.5" cy="10.5" r=".9" fill="currentColor"/><circle cx="14" cy="14.5" r=".9" fill="currentColor"/><circle cx="10" cy="15.5" r=".7" fill="currentColor"/><circle cx="15.5" cy="9" r=".7" fill="currentColor"/></svg>
+  </div>
+  <div class="ck-body">
+    <div class="ck-eye">A small note</div>
+    <p class="ck-msg">We use a few cookies to keep the site running smoothly &mdash; nothing fancy, no tracking sold. <a href="#contact">Questions? Ask Nick.</a></p>
+  </div>
+  <div class="ck-btns">
+    <button type="button" class="ck-btn ck-decline" id="ckDecline">Decline</button>
+    <button type="button" class="ck-btn ck-accept" id="ckAccept">Accept</button>
+  </div>
+</aside>
+<script>
+(function(){
+  var KEY='ntm_cookie_choice';
+  function init(){
+    if(localStorage.getItem(KEY))return;
+    var bar=document.getElementById('cookieBar');
+    if(!bar)return;
+    bar.hidden=false;
+    requestAnimationFrame(function(){setTimeout(function(){bar.classList.add('show')},700)});
+    function close(choice){
+      try{localStorage.setItem(KEY,choice+'|'+Date.now())}catch(e){}
+      bar.classList.remove('show');
+      setTimeout(function(){bar.hidden=true},600);
+    }
+    document.getElementById('ckAccept').addEventListener('click',function(){close('accept')});
+    document.getElementById('ckDecline').addEventListener('click',function(){close('decline')});
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',init)}else{init()}
+})();
+</script>
 
 </body>
 </html>
