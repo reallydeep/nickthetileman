@@ -230,6 +230,21 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   #cookieBar .ck-btns{width:100%;justify-content:flex-end}
   #cookieBar .ck-btn{height:40px;padding:0 14px;font-size:.78rem}
 }
+
+/* === story photos: side-by-side, clickable, no overlap === */
+.story-photo-wrap{display:grid;grid-template-columns:1.5fr 1fr;gap:18px;align-items:start;margin-top:var(--sp-lg);padding-bottom:0;position:static}
+.story-photo-main,.story-photo-accent{display:block;width:100%;padding:0;background:transparent;border:0;font:inherit;color:inherit;text-align:left;cursor:zoom-in;border-radius:var(--r);overflow:hidden;position:relative;transition:transform .25s ease,box-shadow .25s ease;-webkit-tap-highlight-color:transparent}
+.story-photo-main img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:center top;filter:none;display:block}
+.story-photo-accent{box-shadow:0 8px 28px rgba(0,0,0,.45);right:auto;bottom:auto}
+.story-photo-accent img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;object-position:top center;display:block}
+.story-photo-main:hover,.story-photo-accent:hover,.story-photo-main:focus-visible,.story-photo-accent:focus-visible{transform:translateY(-3px);box-shadow:0 14px 36px rgba(0,0,0,.55)}
+.story-photo-main:focus-visible,.story-photo-accent:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.story-photo-badge{left:0;right:0;bottom:0;padding:24px 14px 12px}
+.story-photo-caption{position:absolute;bottom:8px;right:8px}
+@media(max-width:600px){.story-photo-wrap{grid-template-columns:1fr;gap:14px}}
+
+/* lightbox: hide nav arrows when opened from a one-off (story) image */
+.lb.lb-simple .lb-arr{display:none}
 </style>
 </head>
 <body>
@@ -508,14 +523,14 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
         </button>
       </div>
       <div class="story-photo-wrap reveal r2">
-        <div class="story-photo-main">
+        <button type="button" class="story-photo-main" onclick="openStoryLb('assets/team/1603193197bathroom149ave-003-1.jpg','Nick Jr. removing old grout · Brooklyn, NY')" aria-label="Open photo: Nick Jr. removing old grout">
           <img src="assets/team/1603193197bathroom149ave-003-1.jpg" alt="Nick Jr. the Tile Man removing old grout" loading="lazy" width="600" height="450">
           <div class="story-photo-badge">Nick Jr. removing old grout · Brooklyn, NY</div>
-        </div>
-        <div class="story-photo-accent">
+        </button>
+        <button type="button" class="story-photo-accent" onclick="openStoryLb('assets/team/1603187111grandpa1.jpg','Nick Sr. · 1958')" aria-label="Open photo: Nick Sr., 1958">
           <img src="assets/team/1603187111grandpa1.jpg" alt="Nick Sr., the original Tile Man, in 1958" loading="lazy" width="300" height="400">
           <div class="story-photo-caption">Nick Sr. · 1958</div>
-        </div>
+        </button>
       </div>
     </div>
   </div>
@@ -1156,15 +1171,17 @@ $$('.fil-btn').forEach(btn=>{
 const lbEl=$('lb'),lbImg=$('lbImg'),lbCap=$('lbCap');
 let lbIdx=0;
 function openLb(i){lbIdx=i;const g=galleryFiltered[i];if(!g)return;lbImg.src='assets/gallery/'+g.actualFile+'.jpg';lbImg.alt=g.cap;lbCap.textContent=g.cap;lbEl.classList.add('open');document.body.style.overflow='hidden'}
-function closeLb(){lbEl.classList.remove('open');document.body.style.overflow=''}
+function closeLb(){lbEl.classList.remove('open','lb-simple');document.body.style.overflow=''}
+function openStoryLb(src,cap){lbImg.src=src;lbImg.alt=cap;lbCap.textContent=cap;lbEl.classList.add('open','lb-simple');document.body.style.overflow='hidden'}
+window.openStoryLb=openStoryLb;
 $('lbClose').addEventListener('click',closeLb);
 lbEl.addEventListener('click',e=>{if(e.target===lbEl)closeLb()});
 $('lbPrev').addEventListener('click',()=>openLb((lbIdx-1+galleryFiltered.length)%galleryFiltered.length));
 $('lbNext').addEventListener('click',()=>openLb((lbIdx+1)%galleryFiltered.length));
-document.addEventListener('keydown',e=>{if(!lbEl.classList.contains('open'))return;if(e.key==='Escape')closeLb();if(e.key==='ArrowLeft')$('lbPrev').click();if(e.key==='ArrowRight')$('lbNext').click()});
+document.addEventListener('keydown',e=>{if(!lbEl.classList.contains('open'))return;if(e.key==='Escape')closeLb();if(lbEl.classList.contains('lb-simple'))return;if(e.key==='ArrowLeft')$('lbPrev').click();if(e.key==='ArrowRight')$('lbNext').click()});
 let lbTX=0;
 lbEl.addEventListener('touchstart',e=>{lbTX=e.touches[0].clientX},{passive:true});
-lbEl.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-lbTX;if(Math.abs(dx)>50){dx<0?$('lbNext').click():$('lbPrev').click()}else if(Math.abs(dx)<5)closeLb()});
+lbEl.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-lbTX;if(Math.abs(dx)>50){if(lbEl.classList.contains('lb-simple'))return;dx<0?$('lbNext').click():$('lbPrev').click()}else if(Math.abs(dx)<5)closeLb()});
 $$('.faq-q').forEach(q=>{
 q.addEventListener('click',()=>{const item=q.parentElement;const was=item.classList.contains('open');$$('.faq-item').forEach(i=>i.classList.remove('open'));if(!was)item.classList.add('open')});
 });
