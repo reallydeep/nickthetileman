@@ -169,10 +169,12 @@ a:focus,button:focus{outline:none}
 a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 
 /* === mobile polish + animation safety net === */
-/* if animations never fire (reduced-motion, headless, slow JS) the
-   hero text would stay at opacity:0 — force a visible final state */
-.hero-content{opacity:1!important;transform:none!important;animation:none!important}
-.ht{opacity:1!important;animation:none!important}
+/* only force a visible final state when the user opts out of motion;
+   otherwise let the hero text fade-in and tile snap animations play */
+@media (prefers-reduced-motion: reduce){
+  .hero-content{opacity:1!important;transform:none!important;animation:none!important}
+  .ht{opacity:1!important;animation:none!important}
+}
 
 /* small-phone sticky CTA — drop brand, let buttons share row evenly */
 @media(max-width:480px){
