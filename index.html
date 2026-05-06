@@ -16,8 +16,8 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Nick the Tile Man">
 <meta property="og:url" content="https://nickthetileman.com/">
-<meta property="og:image" content="https://nickthetileman.com/assets/og-banner.png">
-<meta property="og:image:secure_url" content="https://nickthetileman.com/assets/og-banner.png">
+<meta property="og:image" content="https://nickthetileman.vercel.app/assets/og-banner.png">
+<meta property="og:image:secure_url" content="https://nickthetileman.vercel.app/assets/og-banner.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -25,12 +25,39 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Nick the Tile Man | 3rd-Generation NYC Tile Installation">
 <meta name="twitter:description" content="Third-generation NYC tile craftsmanship. 80+ years of family legacy. Free estimates. Call (917) 865-8693.">
-<meta name="twitter:image" content="https://nickthetileman.com/assets/og-banner.png">
+<meta name="twitter:image" content="https://nickthetileman.vercel.app/assets/og-banner.png">
 <meta name="twitter:image:alt" content="Nick the Tile Man — Three Generations of New York Tile">
 <link rel="preload" as="image" href="assets/thumbs/IMG_4222.jpg" fetchpriority="high">
 
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%232C2E33'/%3E%3Crect x='8' y='8' width='22' height='22' rx='2' fill='%23C9A84C'/%3E%3Crect x='34' y='8' width='22' height='22' rx='2' fill='%23F5EFE4'/%3E%3Crect x='8' y='34' width='22' height='22' rx='2' fill='%23F5EFE4'/%3E%3Crect x='34' y='34' width='22' height='22' rx='2' fill='%23C17A5D'/%3E%3C/svg%3E">
-<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='28' fill='%232C2E33'/%3E%3Crect x='22' y='22' width='62' height='62' rx='6' fill='%23C9A84C'/%3E%3Crect x='96' y='22' width='62' height='62' rx='6' fill='%23F5EFE4'/%3E%3Crect x='22' y='96' width='62' height='62' rx='6' fill='%23F5EFE4'/%3E%3Crect x='96' y='96' width='62' height='62' rx='6' fill='%23C17A5D'/%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.svg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Nick the Tile Man",
+  "description": "Third-generation NYC tile installation and repair. Bathroom tile, kitchen backsplash, shower repair, re-grouting across Brooklyn, Queens, Manhattan, Nassau and select Suffolk County.",
+  "url": "https://nickthetileman.com/",
+  "logo": "https://nickthetileman.vercel.app/assets/og-banner.png",
+  "image": "https://nickthetileman.vercel.app/assets/og-banner.png",
+  "telephone": "+19178658693",
+  "email": "tygworldwide@gmail.com",
+  "foundingDate": "1944",
+  "areaServed": [
+    {"@type":"City","name":"Brooklyn"},
+    {"@type":"City","name":"Queens"},
+    {"@type":"City","name":"Manhattan"},
+    {"@type":"AdministrativeArea","name":"Nassau County"},
+    {"@type":"AdministrativeArea","name":"Suffolk County"}
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Brooklyn",
+    "addressRegion": "NY",
+    "addressCountry": "US"
+  }
+}
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -157,8 +184,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 
 /* hero — tighter on small phones so headline + CTAs fit one viewport */
 @media(max-width:480px){
-  #hero{min-height:auto;padding:48px 0 56px}
-  .hero-content{padding:20px 18px}
+  #hero{min-height:auto;padding:48px 0 56px;flex-direction:column}
+  .hero-content{padding:20px 18px;width:100%;max-width:100%}
   .hero-eye{font-size:.62rem;letter-spacing:.18em;margin-bottom:14px}
   .hero-eye::before,.hero-eye::after{width:18px}
   .hero-title{font-size:clamp(3.4rem,16vw,6rem);margin-bottom:8px}
